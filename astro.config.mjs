@@ -9,7 +9,7 @@ import { tableWrap } from './src/lib/rehype-table-wrap.mjs';
 // 部署到别的托管（域名根目录）时用环境变量覆盖：
 //   SITE_URL=https://你的域名 BASE_PATH=/ npm run build
 export default defineConfig({
-  site: process.env.SITE_URL ?? 'https://dacl666-code.github.io',
+  site: process.env.SITE_URL ?? 'https://zhishixuebao2026.github.io',
   base: process.env.BASE_PATH ?? '/Chop',
   trailingSlash: 'ignore',
   integrations: [sitemap()],
