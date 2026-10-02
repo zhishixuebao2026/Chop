@@ -1,0 +1,458 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '@/layouts/Base.astro';
+import ArtistCard from '@/components/ArtistCard.astro';
+import TrackCard from '@/components/TrackCard.astro';
+import SpeedChart from '@/components/SpeedChart.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import Marquee from '@/components/Marquee.astro';
+import Globe from '@/components/Globe.astro';
+import Avatar from '@/components/Avatar.astro';
+import VideoShelf from '@/components/VideoShelf.astro';
+import { url } from '@/lib/url';
+import { allSeries, seriesColor } from '@/lib/series';
+import { STYLE, SCENE, displayName } from '@/lib/labels';
+
+const artists = await getCollection('artists');
+const tracks = await getCollection('tracks');
+const timeline = (await getCollection('timeline')).sort((a, b) => a.data.year - b.data.year);
+const regions = (await getCollection('regions')).sort((a, b) => a.data.order - b.data.order);
+
+const cn = artists.filter((a) => a.data.country === 'CN');
+const world = artists.filter((a) => a.data.country !== 'CN');
+const bySince = (a: (typeof artists)[number], b: (typeof artists)[number]) => (a.data.activeSince ?? 9999) - (b.data.activeSince ?? 9999);
+const featuredWorld = world.filter((a) => a.data.featured).sort(bySince).slice(0, 4);
+const homeTracks = ['worldwide-choppers', 'speed-no1', 'godzilla', 'walking-dead-2018-cypher', 'holocaust', 'star-warz']
+  .map((id) => tracks.find((t) => t.id === id))
+  .filter((t) => t !== undefined);
+
+const sourceCount = new Set(
+  [...artists.flatMap((a) => a.data.sources), ...tracks.flatMap((t) => t.data.sources), ...timeline.flatMap((t) => t.data.sources)].map((s) => s.url),
+).size;
+const stats = [
+  { n: cn.length, label: '位中国区人物' },
+  { n: world.length, label: '位世界人物' },
+  { n: tracks.length, label: '首曲目' },
+  { n: sourceCount, label: '条独立来源' },
+];
+
+// 首页右侧"步进器"的几档速度（音节/秒），从慢到快，档与档之间拉开差距
+const presets = [
+  { label: '90 BPM 8 分', v: 3 },
+  { label: '90 BPM 16 分', v: 6 },
+  { label: 'Twista 1992', v: 10.87 },
+  { label: 'El Chojin 2008', v: 15.4 },
+  { label: 'Crucified 爆发', v: 21 },
+];
+const defaultPreset = 2;
+
+const tiers = [
+  { key: 'fast', eg: '法老 · 杨和苏 · 光光 · Eminem', text: '有公认的高速段落，或者语速、咬字就是他的招牌；但没有整首、长期地"切"音节。' },
+  { key: 'chopper', eg: 'Twista · Tech N9ne · 小安迪', text: '整首、长期地"切"音节：一拍塞多个音节、flow 多变、押韵密集。' },
+] as const;
+const seriesList = await allSeries();
+const styleCount = (k: string) => artists.filter((a) => a.data.style === k).length;
+---
+
+<Base>
+  <!-- ============ HERO ============ -->
+  <section class="hero relative overflow-hidden">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container-x relative grid items-center gap-12 pb-16 pt-14 lg:grid-cols-[1.15fr_1fr] lg:pb-24 lg:pt-24">
+      <div>
+        <p class="eyebrow">Chop · 快嘴 · 中国区 &amp; 世界</p>
+        <h1 class="mt-6 text-[clamp(3rem,9vw,7.2rem)] font-bold leading-[1.02]">
+          把音节<br /><span class="chop-word">剁碎</span><span class="text-accent-text">。</span>
+        </h1>
+        <p class="mt-7 max-w-xl text-lg leading-relaxed text-ink-2">
+          <strong class="text-ink">快速说唱</strong>档案馆。从美国中西部的 chopper，到南京、成都、西安、乌鲁木齐的中文快嘴。
+        </p>
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href={url('china/')} class="btn btn-accent">进入中国区 →</a>
+          <a href={url('world/')} class="btn btn-ghost">看世界 Chop 地图</a>
+        </div>
+        <dl class="mt-12 grid max-w-xl grid-cols-2 gap-6 border-t border-line pt-6 sm:grid-cols-4">
+          {
+            stats.map((s) => (
+              <div>
+                <dt class="sr-only">{s.label}</dt>
+                <dd class="font-display text-3xl font-semibold tabular-nums">{s.n}</dd>
+                <dd class="mt-1 text-xs text-ink-3">{s.label}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+
+      <!-- 步进器：直观展示每秒多少个音节 -->
+      <div class="seq card relative p-5 shadow-[var(--shadow)] sm:p-7" data-rate={presets[defaultPreset].v}>
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="eyebrow">Syllables / second</p>
+            <p class="mt-2 font-display text-5xl font-semibold tabular-nums sm:text-6xl"><span class="seq-rate">{presets[defaultPreset].v}</span></p>
+          </div>
+          <span class="chip"><span class="size-1.5 animate-pulse rounded-full bg-hot"></span>LIVE</span>
+        </div>
+        <div class="seq-grid mt-6 grid grid-cols-8 gap-1.5 sm:gap-2" aria-hidden="true">
+          {Array.from({ length: 32 }, (_, i) => <span class:list={['cell', { beat: i % 8 === 0 }]} />)}
+        </div>
+        <p class="mt-4 text-xs text-ink-3">一格一个音节，按真实速度亮起</p>
+        <div class="mt-5 flex flex-wrap gap-2" role="radiogroup" aria-label="选择速度">
+          {
+            presets.map((p, i) => (
+              <button type="button" role="radio" aria-checked={i === defaultPreset ? 'true' : 'false'} class="seq-preset chip cursor-pointer transition" data-v={p.v}>
+                {p.label} · {p.v}
+              </button>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <Marquee class="border-y border-line py-5 font-display text-3xl font-semibold text-ink-3 md:text-5xl" items={artists.map((a) => displayName(a.data))} />
+  </section>
+
+  <!-- ============ 快 ≠ Chop ============ -->
+  <section class="container-x mt-28">
+    <SectionHeading index="01" eyebrow="Fast ≠ Chop" title="快，不等于 Chop" href="learn/what-is-chop/" linkLabel="读完整解释">
+      <p class="mt-4 max-w-2xl text-ink-2">Chop 是一种风格，唱 chop 的人才叫 chopper。会唱得快的人，不一定唱 chop。</p>
+    </SectionHeading>
+    <ol class="tiers grid gap-4 md:grid-cols-2">
+      {
+        tiers.map((t, i) => (
+          <li class="tier card relative overflow-hidden p-6" style={`--sc:${STYLE[t.key].color};--lvl:${i + 1}`}>
+            <div class="tier-bars mb-8 flex h-16 items-end gap-[3px]" aria-hidden="true">
+              {Array.from({ length: 24 }, (_, j) => (
+                <i style={`--h:${0.2 + Math.abs(Math.sin(j * (0.9 + (i + 1) * 0.55))) * (0.35 + (i + 1) * 0.3)}`} />
+              ))}
+            </div>
+            <p class="eyebrow">Level {i + 1}</p>
+            <h3 class="mt-2 text-3xl font-semibold" style="color:var(--sc)">{STYLE[t.key].level}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink-2">{t.text}</p>
+            <p class="mt-5 text-xs text-ink-3">例：{t.eg}</p>
+            <p class="mt-1 text-xs text-ink-3">收录 {styleCount(t.key)} 位</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <!-- ============ 两个入口 ============ -->
+  <section class="container-x mt-28 grid gap-4 lg:grid-cols-2">
+    <a href={url('china/')} class="zone zone-china group relative overflow-hidden rounded-[28px] p-7 sm:p-10">
+      <div class="zone-faces" aria-hidden="true">
+        {cn.slice(0, 4).map((a) => <Avatar id={a.id} data={a.data} widths={[160]} sizes="80px" class="face size-16 overflow-hidden rounded-2xl object-cover sm:size-14 lg:size-16" />)}
+      </div>
+      <p class="eyebrow relative !text-white/70">China · 中国区</p>
+      <h2 class="relative mt-3 text-4xl font-bold text-white sm:text-6xl">中国快嘴</h2>
+      <p class="relative mt-4 max-w-md text-white/80 sm:max-w-[22rem] md:max-w-md lg:max-w-[22rem]">
+        按地区看：{regions.map((r) => r.data.name).join(' · ')}。从 2008 年的《Speed #1》，到 B 站上自己组 cypher 的新一代 chopper。
+      </p>
+      <span class="relative mt-8 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition group-hover:gap-3">进入中国区 →</span>
+    </a>
+    <a href={url('world/')} class="zone zone-world group relative overflow-hidden rounded-[28px] p-7 sm:p-10">
+      <div class="zone-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="eyebrow relative !text-accent-ink/70">World · 世界</p>
+      <h2 class="relative mt-3 text-4xl font-bold text-accent-ink sm:text-6xl">世界 Chop</h2>
+      <p class="relative mt-4 max-w-md text-accent-ink/80">从美国中西部到土耳其、韩国、菲律宾。在地球上看 chop 是怎么传开的。</p>
+      <span class="relative mt-8 inline-flex items-center gap-2 rounded-full bg-accent-ink px-5 py-2.5 text-sm font-semibold text-accent transition group-hover:gap-3">打开地球 →</span>
+    </a>
+  </section>
+
+  <!-- ============ 世界地图 ============ -->
+  <section class="container-x mt-32">
+    <SectionHeading index="02" eyebrow="World map" title="世界 Chop 地图" href="world/" linkLabel="世界区" />
+    <Globe initial="us" />
+  </section>
+
+  <!-- ============ 世界人物 ============ -->
+  <section class="container-x mt-32">
+    <SectionHeading index="03" eyebrow="People" title="世界人物" href="choppers/?scene=world" linkLabel="全部世界人物" />
+    <div class="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+      {featuredWorld.map((a) => <ArtistCard artist={a} />)}
+    </div>
+  </section>
+
+  <!-- ============ 速度榜 ============ -->
+  <section class="container-x mt-32">
+    <SectionHeading index="04" eyebrow="Speed board" title="语速榜" href="learn/measuring-speed/" linkLabel="数据怎么测">
+      <p class="mt-4 max-w-2xl text-ink-2">每根条都标了可信度：官方认证、第三方测算、传闻分开看。</p>
+    </SectionHeading>
+    <div class="card p-5 sm:p-8"><SpeedChart /></div>
+  </section>
+
+  <!-- ============ 系列 ============ -->
+  <section class="container-x mt-32">
+    <SectionHeading index="05" eyebrow="Series" title="Choppers 系列" href="series/" linkLabel="看全部系列">
+      <p class="mt-4 max-w-2xl text-ink-2">多人合作的 cypher 是 chop 圈的名场面：Midwest Choppers、Undaground Choppers、Illest Choppers、Infinite Choppers，逐集有名单和日期。</p>
+    </SectionHeading>
+    <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        seriesList.map((s) => (
+          <li>
+            <a href={url(`series/${s.id}/`)} class="home-series card group flex h-full flex-col p-5 transition hover:border-line-strong" style={`--c:${seriesColor(s)}`}>
+              <span class="font-display text-3xl font-bold" style="color:var(--c)">{s.data.short ?? s.data.name}</span>
+              <span class="mt-2 font-semibold">{s.data.name}</span>
+              <span class="mt-1 text-xs text-ink-3">{s.data.host} · {s.data.years} · {s.data.episodes.length} 集</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <!-- ============ 曲目 ============ -->
+  <section class="container-x mt-32">
+    <SectionHeading index="06" eyebrow="Tracks" title="必听曲目" href="tracks/" linkLabel="曲目库" />
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {homeTracks.map((t) => <div class="flex min-w-0"><TrackCard track={t} /></div>)}
+    </div>
+  </section>
+
+  <!-- ============ 视频 ============ -->
+  <section class="container-x mt-32">
+    <SectionHeading index="07" eyebrow="Watch" title="值得一看" href="tracks/#videos" linkLabel="全部视频" />
+    <div class="mt-8"><VideoShelf kinds={['speed', 'picks']} limit={8} /></div>
+  </section>
+
+  <!-- ============ 时间线预览 ============ -->
+  <section class="mt-32">
+    <div class="container-x">
+      <SectionHeading index="08" eyebrow="Timeline" title="四十年，越来越快" href="timeline/" linkLabel="完整时间线" />
+    </div>
+    <div class="tl-scroll container-x flex snap-x gap-4 overflow-x-auto pb-6">
+      {
+        timeline.map((e) => (
+          <a href={url(`timeline/#${e.id}`)} class="card group flex w-64 shrink-0 snap-start flex-col p-5 transition hover:border-line-strong" style={`--lc:${SCENE[e.data.scene].color}`}>
+            <span class="flex items-baseline justify-between">
+              <span class="font-display text-4xl font-semibold tabular-nums" style="color:var(--lc)">{e.data.year}</span>
+              <span class="eyebrow">{SCENE[e.data.scene].name}</span>
+            </span>
+            <span class="mt-3 font-semibold">{e.data.title}</span>
+            <span class="mt-2 line-clamp-3 text-sm text-ink-3">{e.data.body}</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- ============ 实验室入口 ============ -->
+  <section class="container-x mt-28">
+    <div class="cta relative overflow-hidden rounded-[28px] p-8 sm:p-14">
+      <p class="eyebrow !text-accent-ink/70">Speed lab</p>
+      <h2 class="mt-3 max-w-2xl text-3xl font-semibold text-accent-ink sm:text-5xl">你每秒能吐几个字？</h2>
+      <p class="mt-4 max-w-xl text-accent-ink/80">贴一段歌词，按下计时器念一遍，看看你和光光的《Speed #1》、Twista 的吉尼斯纪录差多少。</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href={url('lab/')} class="btn bg-accent-ink text-accent hover:opacity-90">去速度实验室</a>
+        <a href={url('learn/measuring-speed/')} class="btn border border-accent-ink/30 text-accent-ink hover:border-accent-ink">语速怎么算</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero-glow {
+    position: absolute;
+    inset: -20% -10% auto auto;
+    width: 70vw;
+    height: 70vw;
+    max-width: 900px;
+    max-height: 900px;
+    background: radial-gradient(closest-side, color-mix(in oklab, var(--accent) 16%, transparent), transparent);
+    pointer-events: none;
+  }
+  /* "剁碎"：一道斜刀痕切过文字 */
+  .chop-word {
+    position: relative;
+    display: inline-block;
+    color: var(--accent-text);
+    overflow: hidden;
+    /* 行高只有 1.02，汉字底部会被 overflow 裁掉；下方补空间再用负边距抵回 */
+    padding: 0.06em 0.04em 0.16em 0;
+    margin-bottom: -0.16em;
+  }
+  .chop-word::after {
+    content: '';
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    /* 原来是盒子高度的 52%（约 0.53em）；盒子上方多了 0.06em 的补边，这里换算成 em 保持刀痕位置不变 */
+    top: 0.59em;
+    height: 0.07em;
+    background: var(--bg);
+    transform: rotate(-9deg);
+    transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  @media (hover: hover) {
+    .hero:hover .chop-word::after {
+      transform: rotate(-9deg) translateY(-0.18em);
+    }
+  }
+
+  /* 步进器 */
+  .cell {
+    aspect-ratio: 1;
+    border-radius: 6px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    transition:
+      background 0.25s ease,
+      transform 0.25s ease;
+  }
+  .cell.beat {
+    border-color: var(--line-strong);
+  }
+  .cell.on {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: scale(0.9);
+    transition: none;
+  }
+  .seq-preset[aria-checked='true'] {
+    background: var(--accent);
+    color: var(--accent-ink);
+    border-color: var(--accent);
+  }
+
+  /* 两层 */
+  .tier {
+    border-top: 3px solid var(--sc);
+  }
+  .tier-bars i {
+    flex: 1;
+    height: calc(var(--h) * 100%);
+    border-radius: 2px;
+    background: color-mix(in oklab, var(--sc) 80%, transparent);
+  }
+
+  /* 两个入口 */
+  .zone {
+    min-height: 22rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    isolation: isolate;
+  }
+  .zone-china {
+    background:
+      radial-gradient(90% 80% at 85% 10%, color-mix(in oklab, var(--scene-china) 70%, #000), transparent 70%),
+      linear-gradient(160deg, #3a0d0a, #120606 70%);
+  }
+  .zone-faces {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 0.5rem;
+    transform: rotate(6deg);
+    opacity: 0.9;
+  }
+  .zone-faces :global(.face) {
+    box-shadow: 0 10px 30px rgb(0 0 0 / 0.4);
+  }
+  .zone-faces :global(.face:nth-child(even)) {
+    transform: translateY(1.25rem);
+  }
+  /* 手机上头像缩小放在右上角，卡片加高，给标题留出位置 */
+  @media (max-width: 639px) {
+    .zone-china {
+      min-height: 27rem;
+    }
+    .zone-faces {
+      top: 1rem;
+      right: 1rem;
+      transform: rotate(6deg) scale(0.78);
+      transform-origin: top right;
+    }
+  }
+  .zone-world {
+    background:
+      radial-gradient(120% 140% at 100% 0%, color-mix(in oklab, var(--accent) 60%, white) 0%, transparent 60%),
+      var(--accent);
+  }
+  .zone-rings {
+    position: absolute;
+    top: -22%;
+    right: -12%;
+    width: 46%;
+    aspect-ratio: 1;
+  }
+  .zone-rings i {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1.5px solid rgb(12 12 13 / 0.18);
+  }
+  .zone-rings i:nth-child(2) {
+    inset: 14%;
+    border-style: dashed;
+  }
+  .zone-rings i:nth-child(3) {
+    inset: 30%;
+    background: repeating-radial-gradient(circle, rgb(12 12 13 / 0.22) 0 2px, transparent 2px 9px);
+  }
+  @media (hover: hover) {
+    .zone {
+      transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    .zone:hover {
+      transform: translateY(-4px);
+    }
+  }
+
+  .tl-scroll {
+    scrollbar-width: thin;
+  }
+  .cta {
+    background:
+      radial-gradient(120% 140% at 100% 0%, color-mix(in oklab, var(--accent) 60%, white) 0%, transparent 60%),
+      var(--accent);
+  }
+</style>
+
+<script>
+  // 步进器：按真实的"每秒音节数"依次点亮格子。
+  // 用定时器按节拍触发（而不是每帧执行），离开视口或切到后台就暂停。
+  const root = document.querySelector<HTMLElement>('.seq');
+  if (root) {
+    const cells = [...root.querySelectorAll<HTMLElement>('.cell')];
+    const rateEl = root.querySelector('.seq-rate')!;
+    let rate = Number(root.dataset.rate);
+    let idx = 0;
+    let timer = 0;
+    let inView = true;
+
+    const stop = () => {
+      clearTimeout(timer);
+      timer = 0;
+    };
+    const tick = () => {
+      cells[idx]?.classList.remove('on');
+      idx = (idx + 1) % cells.length;
+      cells[idx].classList.add('on');
+      timer = window.setTimeout(tick, 1000 / rate);
+    };
+    const start = () => {
+      if (timer || !inView || document.hidden) return;
+      timer = window.setTimeout(tick, 1000 / rate);
+    };
+
+    new IntersectionObserver(([e]) => {
+      inView = e.isIntersecting;
+      inView ? start() : stop();
+    }).observe(root);
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+
+    root.querySelectorAll<HTMLButtonElement>('.seq-preset').forEach((b) => {
+      b.addEventListener('click', () => {
+        rate = Number(b.dataset.v);
+        rateEl.textContent = String(rate);
+        root.querySelectorAll('.seq-preset').forEach((x) => x.setAttribute('aria-checked', String(x === b)));
+        stop();
+        start();
+      });
+    });
+    start();
+  }
+</script>

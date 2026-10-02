@@ -1,0 +1,278 @@
+import { defineCollection, reference } from 'astro:content';
+import { glob, file } from 'astro/loaders';
+import { z } from 'astro/zod';
+
+/** 可信度四级：已证实 / 有争议 / 待核实 / 已辟谣 */
+export const confidence = z.enum(['verified', 'disputed', 'pending', 'debunked']);
+
+const source = z.object({
+  title: z.string(),
+  url: z.url(),
+});
+
+/** [纬度, 经度] */
+const geo = z.tuple([z.number().min(-90).max(90), z.number().min(-180).max(180)]);
+
+/** 一条"速度"说法：数值 + 口径 + 可信度 + 出处 */
+const speedClaim = z.object({
+  value: z.number(),
+  unit: z.enum(['syl/s', 'char/s', 'word/s']).default('syl/s'),
+  label: z.string(), // 例如 "Godzilla 第三段主歌"
+  kind: z.enum(['official', 'measured', 'claimed']), // 官方认证 / 第三方测算 / 自称或传闻
+  /** 出自哪份榜单或哪个测算方，不同榜单的歌、剪法和规则不同，页面上会标出来 */
+  by: z.string(),
+  /**
+   * 测量窗口：不同窗口的数字不能直接比
+   * burst = 爆发（约 0.7–2 秒，SPS 社区常用；满 1 秒含金量最高）；short = 短段（3–15 秒）；long = 整段平均（15 秒以上）；unknown = 口径不明
+   */
+  window: z.enum(['burst', 'short', 'long', 'unknown']),
+  /** 有的话填上，页面会显示算式 */
+  syllables: z.number().optional(),
+  seconds: z.number().optional(),
+  confidence,
+  note: z.string().optional(),
+  sources: z.array(source).min(1),
+});
+
+const artists = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/artists' }),
+  schema: z.object({
+    name: z.string(),
+    nameZh: z.string().optional(),
+    realName: z.string().optional(),
+    tagline: z.string(),
+    country: z.enum(['US', 'KR', 'TR', 'CN', 'PH', 'GE', 'MX', 'AU', 'CA', 'GB', 'AT', 'BR', 'HU', 'MY', 'PL', 'JP', 'FI', 'ZA', 'KW', 'IT', 'RU', 'DK', 'DE', 'FR']),
+    city: z.string(),
+    /** 分组用的地区名，中国区按这个分组（如"川渝"） */
+    region: z.string(),
+    geo: geo.optional(),
+    activeSince: z.number().int().optional(),
+    born: z.string().optional(),
+    died: z.string().optional(),
+    /**
+     * 风格标签（快 ≠ Chop；chop 是风格，chopper 是唱 chop 的人）：
+     * chopper = 有来源称其为 chopper，或长期整首地唱 chop
+     * fast    = 快嘴：有高速段落或以语速著称，但不是整首、长期地唱 chop
+     */
+    style: z.enum(['chopper', 'fast']),
+    styleNote: z.string(),
+    /** 没标 Chopper，但接近 chop（有争议、和 chopper 合作过、速度强度接近等），写明理由 */
+    nearChop: z.string().optional(),
+    tags: z.array(z.string()).default([]),
+    featured: z.boolean().default(false),
+    youtube: z
+      .object({
+        channelId: z.string(),
+        handle: z.string().optional(),
+        kind: z.enum(['official', 'topic', 'label']),
+      })
+      .optional(),
+    /** 频道头像不是本人时，用官方视频截图当人物照（由 scripts/fetch-youtube.mjs 生成 portrait.jpg） */
+    portrait: z.object({ video: z.string(), focusX: z.number().min(0).max(1).default(0.5) }).optional(),
+    /**
+     * 没有合适的 YouTube 图时，从别的官方主页取图，裁成正方形存为 photo.jpg：
+     * 网易云音乐歌手页（avatar 头像 / cover 封面），或 B 站个人空间头像（id 是 UID）
+     */
+    photoSource: z
+      .object({
+        site: z.enum(['netease', 'bilibili']),
+        id: z.number().int(),
+        /** B 站昵称：按昵称搜索用户，再用 UID 核对（B 站按 UID 直接查的接口要登录） */
+        name: z.string().optional(),
+        image: z.enum(['avatar', 'cover']).default('avatar'),
+        focusX: z.number().min(0).max(1).default(0.5),
+        focusY: z.number().min(0).max(1).default(0.5),
+        /** >1 表示放大裁切（取更小的正方形） */
+        zoom: z.number().min(1).max(4).default(1),
+      })
+      .optional(),
+    /** 频道横幅只是宣传文字图时设为 false */
+    useBanner: z.boolean().default(true),
+    related: z.array(reference('artists')).default([]),
+    speed: z.array(speedClaim).default([]),
+    sources: z.array(source).min(1),
+  }),
+});
+
+const tracks = defineCollection({
+  loader: file('src/data/tracks.yaml'),
+  schema: z.object({
+    title: z.string(),
+    /** 本站收录的艺人；流行歌手等不建档的可以为空 */
+    artists: z.array(reference('artists')).default([]),
+    credit: z.string(), // 展示用的完整署名
+    scene: z.enum(['china', 'world']),
+    /** 路人入门曲目（流行歌里的快段落等） */
+    starter: z.boolean().default(false),
+    year: z.number().int().optional(),
+    album: z.string().optional(),
+    /** 视频 ID；只在国内平台发行的歌可以没有 */
+    youtube: z.string().optional(),
+    youtubeChannel: z.string().optional(), // 上传频道名
+    /** 国内能看的 B 站视频（BV 号），YouTube 打不开时直接播这个 */
+    bilibili: z.string().regex(/^BV[0-9A-Za-z]{10}$/).optional(),
+    /** 网易云音乐歌曲 ID */
+    netease: z.number().int().optional(),
+    officialUpload: z.boolean(),
+    note: z.string(),
+    confidence: confidence.default('verified'),
+    sources: z.array(source).min(1),
+  }).refine((d) => d.youtube || d.bilibili || d.netease, { message: '曲目至少要有 YouTube、B 站或网易云其中一个' }),
+});
+
+const timeline = defineCollection({
+  loader: file('src/data/timeline.yaml'),
+  schema: z.object({
+    year: z.number().int(),
+    title: z.string(),
+    body: z.string(),
+    scene: z.enum(['china', 'world']),
+    artist: reference('artists').optional(),
+    /** 关联曲目：时间线卡片上显示视频缩略图 */
+    track: reference('tracks').optional(),
+    confidence: confidence.default('verified'),
+    /** 圈内亲历的事可以不附链接 */
+    sources: z.array(source).default([]),
+  }),
+});
+
+const learn = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/learn' }),
+  schema: z.object({
+    title: z.string(),
+    kicker: z.string(),
+    summary: z.string(),
+    order: z.number(),
+    /** 开头"三句话看懂"的要点 */
+    keyPoints: z.array(z.string()).default([]),
+    /** 开头的示意图（见 LearnFigure.astro） */
+    figure: z.enum(['tiers', 'origins', 'windows', 'guinness']).optional(),
+    /** 文章主色（见 global.css 的 data-hue），不写则用默认金色 */
+    hue: z.enum(['red', 'teal', 'plum', 'orange', 'olive']).optional(),
+    /** 开头的"数字速览"：n 可以写 {{chopper}} / {{fast}} / {{people}}，构建时换成站内实时数量 */
+    stats: z.array(z.object({ n: z.string(), unit: z.string().optional(), label: z.string() })).default([]),
+    sources: z.array(source).default([]),
+  }),
+});
+
+/** 中国区的地区场景 */
+const regions = defineCollection({
+  loader: file('src/data/china-regions.yaml'),
+  schema: z.object({
+    name: z.string(),
+    en: z.string(),
+    cities: z.array(z.object({ name: z.string(), geo })),
+    summary: z.string(),
+    body: z.string(),
+    order: z.number(),
+    sources: z.array(source).default([]),
+  }),
+});
+
+/** 地球上的国家/场景标记（除了本站建档的人物之外，也可以列出来源里提到的名字） */
+const scenes = defineCollection({
+  loader: file('src/data/world-scenes.yaml'),
+  schema: z.object({
+    name: z.string(),
+    en: z.string(),
+    geo,
+    summary: z.string(),
+    /** 未建档但有来源提到的人 */
+    mentions: z.array(z.string()).default([]),
+    link: z.string().optional(),
+    sources: z.array(source).min(1),
+  }),
+});
+
+/** chopper cypher 的逐人测算表（来自社区，只收录艺名和作品数据） */
+const cyphers = defineCollection({
+  loader: file('src/data/cyphers.yaml'),
+  schema: z.object({
+    title: z.string(),
+    host: z.string(),
+    youtube: z.string(),
+    note: z.string(),
+    calculator: z.string(),
+    window: z.enum(['burst', 'short', 'long']),
+    entries: z.array(z.object({ name: z.string(), sps: z.number(), syllables: z.number(), seconds: z.number() })).min(1),
+    sources: z.array(source).min(1),
+  }),
+});
+
+/** 收录人物之间的合作曲（署名以网易云音乐为准） */
+const collabs = defineCollection({
+  loader: file('src/data/collabs.yaml'),
+  schema: z
+    .object({
+      title: z.string(),
+      artists: z.array(reference('artists')).min(2),
+      credit: z.string(),
+      date: z.string(),
+      album: z.string(),
+      /** 网易云歌曲 ID */
+      netease: z.number().int().optional(),
+      /** 网易云查不到时的出处 */
+      source: source.optional(),
+    })
+    .refine((d) => d.netease !== undefined || d.source !== undefined, { message: '需要 netease 或 source 之一' }),
+});
+
+/** 测速视频、推荐合集、教学（链接到 B 站 / YouTube，封面存在本站） */
+const videos = defineCollection({
+  loader: file('src/data/videos.yaml'),
+  schema: z.object({
+    platform: z.enum(['bilibili', 'youtube']),
+    title: z.string(),
+    author: z.string(),
+    date: z.string(),
+    duration: z.string().optional(),
+    /** 封面原图地址，由 scripts/fetch-youtube.mjs 下载到 src/assets/videos/ */
+    cover: z.url(),
+    kind: z.enum(['speed', 'picks', 'howto', 'related']),
+    scene: z.enum(['china', 'world']),
+    /** 只在这些人物页的「相关视频」里出现（related 类必填） */
+    artists: z.array(z.string()).default([]),
+    note: z.string().optional(),
+  }),
+});
+
+/**
+ * chopper 合作系列（Undaground Choppers、Illest Choppers 等）。正文写系列的来龙去脉。
+ * lineup 里写艺名；站内有档案的写成 "艺名@slug"，页面会链过去。
+ */
+const series = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/series' }),
+  schema: z.object({
+    name: z.string(),
+    /** 系列简称，比如 UC、IC */
+    short: z.string().optional(),
+    host: z.string(),
+    hostSlug: z.string().optional(),
+    scene: z.enum(['world', 'china']),
+    years: z.string(),
+    order: z.number(),
+    summary: z.string(),
+    episodes: z
+      .array(
+        z.object({
+          no: z.string(),
+          title: z.string(),
+          /** YYYY-MM-DD，只知道年份就写 YYYY */
+          date: z.string(),
+          lineup: z.array(z.string()).default([]),
+          note: z.string().optional(),
+          youtube: z.string().optional(),
+          bilibili: z.string().optional(),
+          netease: z.number().optional(),
+          /** 曲库里已有的曲目 */
+          track: z.string().optional(),
+          /** 名场面：写进时间线卡片的高亮 */
+          highlight: z.boolean().default(false),
+        }),
+      )
+      .min(1),
+    sources: z.array(source).min(1),
+  }),
+});
+
+export const collections = { artists, tracks, timeline, learn, regions, scenes, cyphers, collabs, videos, series };

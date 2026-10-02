@@ -1,0 +1,59 @@
+---
+/** 无限滚动的文字带 */
+interface Props { items: string[]; reverse?: boolean; class?: string }
+const { items, reverse = false, class: cls = '' } = Astro.props;
+const row = [...items, ...items];
+---
+<div class:list={['marquee relative overflow-hidden', cls]} aria-hidden="true">
+  <div class:list={['flex w-max animate-marquee gap-10 whitespace-nowrap', { 'direction-reverse': reverse }]}>
+    {row.map((t) => (
+      <span class="flex items-center gap-10">
+        {t}
+        <span class="text-accent-text">✦</span>
+      </span>
+    ))}
+  </div>
+</div>
+
+<style>
+  /* 两侧渐隐用覆盖层实现（比 mask-image 便宜） */
+  .marquee::before,
+  .marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 12%;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .marquee::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--bg), transparent);
+  }
+  .marquee::after {
+    right: 0;
+    background: linear-gradient(-90deg, var(--bg), transparent);
+  }
+  .marquee > div {
+    will-change: transform;
+  }
+  .marquee.is-paused > div {
+    animation-play-state: paused;
+  }
+  .direction-reverse {
+    animation-direction: reverse;
+  }
+  @media (hover: hover) {
+    .marquee:hover > div {
+      animation-play-state: paused;
+    }
+  }
+</style>
+
+<script>
+  // 不在屏幕里时暂停滚动，省电也减少合成开销
+  document.querySelectorAll<HTMLElement>('.marquee').forEach((el) => {
+    new IntersectionObserver(([e]) => el.classList.toggle('is-paused', !e.isIntersecting)).observe(el);
+  });
+</script>

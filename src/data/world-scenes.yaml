@@ -1,0 +1,196 @@
+# 地球上的场景标记。国家中心点坐标取大致位置，只作为标记，不代表边界。
+- id: us
+  name: 美国
+  en: United States
+  geo: [39.5, -95.5]
+  summary: Chop 的发源地。1990 年代初从中西部兴起，Tech N9ne 的 Strange Music 把它做成了系列企划；如今 YouTube 上的 SPS 社区还在把语速往上推。
+  mentions: [Krizz Kaliko, Yelawolf, D-Loc, JL B.Hood, Dayton Family]
+  sources:
+    - { title: 'Wikipedia – Chopper (rap)', url: 'https://en.wikipedia.org/wiki/Chopper_(rap)' }
+    - { title: 'Wikipedia – Worldwide Choppers', url: 'https://en.wikipedia.org/wiki/Worldwide_Choppers' }
+    - { title: 'SPS and Chopper Rap Wiki', url: 'https://sps-and-chopper-rap.fandom.com/wiki/Sps_and_chopper_rap_Wiki' }
+- id: cn
+  name: 中国
+  en: China
+  geo: [34.5, 108.9]
+  summary: 中文圈更常说"快嘴"。从南京 D-Evil、活死人，到 B 站和 QQ 群里自己组 cypher 的新一代 chopper。
+  link: china/
+  sources:
+    - { title: '网易 – 谁才是中文说唱圈第一快嘴？（2018）', url: 'https://www.163.com/dy/article/E22BSRNQ0512S3SL.html' }
+- id: kr
+  name: 韩国
+  en: South Korea
+  geo: [36.5, 127.8]
+  summary: 维基百科 Chopper 词条把 Outsider 列为韩国代表，他的语速数字在网上流传着好几个版本。
+  sources:
+    - { title: 'Wikipedia – Chopper (rap)', url: 'https://en.wikipedia.org/wiki/Chopper_(rap)' }
+- id: tr
+  name: 土耳其
+  en: Türkiye
+  geo: [39.0, 35.2]
+  summary: Ceza 是土耳其说唱的代表人物，《Holocaust》常被称作土耳其最快的歌之一，他也在《Worldwide Choppers》里唱了唯一的土耳其语段落。按 NahDah 团队 2024 年逐段测算，土耳其最快的一段则是 Kardiyak 在《Illest Choppers 4》里的 15.70。
+  sources:
+    - { title: 'Wikipedia – Ceza', url: 'https://en.wikipedia.org/wiki/Ceza' }
+    - { title: 'NahDah Vebb – The Fastest Rapper from Every Country（2024）曲目表', url: 'https://docs.google.com/spreadsheets/d/1q6ccbONUj_yDxAbRCYVqQK5DLmxcQ4I6wlK_zVeaz0o' }
+- id: ph
+  name: 菲律宾
+  en: Philippines
+  geo: [12.9, 121.8]
+  summary: Gloc-9 以"快速流动的 chop 唱腔"成为菲律宾最成功的说唱歌手之一；地下 chop 圈的 Sabotahe 是 NahDah 2023 版第 2 名，Aktibar 的 Kill（Paslangin）系列也来自这里。
+  mentions: [Aktibar]
+  sources:
+    - { title: 'Wikipedia – Gloc-9', url: 'https://en.wikipedia.org/wiki/Gloc-9' }
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+- id: mx
+  name: 墨西哥
+  en: Mexico
+  geo: [23.6, -102.5]
+  summary: 西语快嘴的一个中心。Don Xperto 早年以"世界最快"自我宣传、上过电视，后来因长期加速被 NahDah 永久除名；Big Metra 也曾冲击吉尼斯"最快说唱"纪录。
+  mentions: [Big Metra, Roylets]
+  sources:
+    - { title: 'NahDah Vebb – 2023 榜除名说明（Don Xperto 一节）', url: 'https://docs.google.com/document/d/1DfcPmT5YCWYwDRP-uyFMEthi9n7ctGRsK2C3QxiFJrA' }
+    - { title: 'El Universal – Big Metra va por un récord Guinness', url: 'https://archivo.eluniversal.com.mx/espectaculos/66417.html' }
+    - { title: 'Genius – Don Xperto 艺人页（称 Roylets 为墨西哥第二快）', url: 'https://genius.com/artists/Don-xperto' }
+- id: ge
+  name: 格鲁吉亚
+  en: Georgia
+  geo: [42.3, 43.4]
+  summary: Interchopper 来自这里，是 Undaground Choppers 的常客，一度被认为能稳定超过 20 SPS；后来多数高速作品被判定加速，只有少数几首被 SPS 社区认可。
+  sources:
+    - { title: 'Genius – Interchopper 艺人页', url: 'https://genius.com/artists/Interchopper' }
+    - { title: 'SPS and Chopper Rap Wiki – Interchopper', url: 'https://sps-and-chopper-rap.fandom.com/wiki/Interchopper' }
+- id: au
+  name: 澳大利亚
+  en: Australia
+  geo: [-25.3, 133.8]
+  summary: The Jackal 自称"大洋洲最快"，NahDah 2017 版一度排到第 2；后来的系统测算只有 15 左右，早年的数字基本作废。
+  sources:
+    - { title: 'YouTube – The Jackal Rapper（本人频道）', url: 'https://www.youtube.com/@TheJackalRapper' }
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+- id: ca
+  name: 加拿大
+  en: Canada
+  geo: [56.1, -106.3]
+  summary: Leach 来自这里，2013 年就和 DNA、Yung Revival 合唱了《Tie The Noose》，此后一直是 DNA 最常合作的 chopper 之一。NahDah 2017、2021 版都把他排进前 10，2023 版因加速嫌疑除名。
+  sources:
+    - { title: 'Bandcamp – DNA Tru Lyricist：The Evolution（2013）', url: 'https://dnatrulyricist.bandcamp.com/album/the-evolution' }
+    - { title: 'NahDah Vebb – 2023 榜除名说明', url: 'https://docs.google.com/document/d/1DfcPmT5YCWYwDRP-uyFMEthi9n7ctGRsK2C3QxiFJrA' }
+- id: gb
+  name: 英国
+  en: United Kingdom
+  geo: [54.0, -2.4]
+  summary: Yung Revival 来自这里。他 2013 年和 DNA、Leach 合唱《Tie The Noose》，NahDah 2017 版第 13；沉寂多年后 2025 年回归，又和 DNA、Leach、Crucified 等人合作了一连串新歌，同台的常有英国的 Asa Jake，他是 NahDah 2024 年"每国最快"的英国代表。
+  sources:
+    - { title: 'YouTube – YUNG REVIVAL OFFICIAL（本人频道）', url: 'https://www.youtube.com/@YUNGREVIVALOFFICIAL' }
+    - { title: 'YouTube – DNA - Yung Revival Shout Out "From the UK"（2015）', url: 'https://www.youtube.com/watch?v=vkvL1z3_Li0' }
+- id: at
+  name: 奥地利
+  en: Austria
+  geo: [47.5, 14.5]
+  summary: 林茨的 Ruffian Rugged（Def Ill）是奥地利资深的双倍速 rapper，2019 年挤进 Undaground Choppers 10，又和匈牙利的 Dumanoid 牵头做了《Onion Chopper》，NahDah 2023 版第 4。同一首里还有奥地利的 Fate。
+  mentions: [Fate]
+  sources:
+    - { title: 'Wikipedia（德语）– Def Ill', url: 'https://de.wikipedia.org/wiki/Def_Ill' }
+    - { title: 'YouTube – Ruffian & Dumanoid - Onion Chopper（2023）', url: 'https://www.youtube.com/watch?v=8T-HVOvWbqQ' }
+- id: br
+  name: 巴西
+  en: Brazil
+  geo: [-14.2, -51.9]
+  summary: 葡萄牙语的 speed flow 圈有自己的测速频道（TrollatorBR、BruCalcs）。Shad 的《FreeZeTyler》1 秒 20 个音节，是巴西公认的最快，NahDah 2021 版第 2、2023 版第 6；TrollatorBR 的主人 Troll 自己也是 speedflow rapper，NahDah 2023 版第 16。NahDah 2024 年"每国最快"里巴西选的是 eze，《Aang》1 秒 21 个音节左右，全表第 3。
+  mentions: [MC Igu]
+  sources:
+    - { title: 'YouTube – TrollatorBR："TOP 50" Rappers Mais Rápidos do Brasil（2021）', url: 'https://www.youtube.com/watch?v=Bn8BQsxuif0' }
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+- id: hu
+  name: 匈牙利
+  en: Hungary
+  geo: [47.2, 19.5]
+  summary: DUMANOID（早年叫 DNS）用匈牙利语和英语唱，三版 NahDah 榜都在前 15；他和奥地利的 Ruffian Rugged 合作了整张《For The Record》，其中就有《Onion Chopper》。
+  sources:
+    - { title: 'SPS and Chopper Rap Wiki – Dumanoid', url: 'https://sps-and-chopper-rap.fandom.com/wiki/Dumanoid' }
+    - { title: 'YouTube – Dumanoid - The Evolution of a Chopper（2020）', url: 'https://www.youtube.com/watch?v=9fSwvbruiHU' }
+- id: my
+  name: 马来西亚
+  en: Malaysia
+  geo: [4.2, 102.0]
+  summary: 泰米尔语说唱的一个重镇。Sri Rascol 和 ADK 的 Rap Machines 出过多支千万级播放的 MV，《AYM》的高速段落进了 NahDah 2023 版第 11 名。马来语这边，柔佛的 Alep Hunter 在一期"最快 rapper"对决里的段落排第 25。
+  mentions: [ADK]
+  sources:
+    - { title: 'YouTube – Rap Machines（Sri Rascol 官方频道）', url: 'https://www.youtube.com/@srirascolofficial' }
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+- id: pl
+  name: 波兰
+  en: Poland
+  geo: [52.0, 19.4]
+  summary: kVr（现在叫 6feetbelowhell）是 2015–2017 年地下 chopper cypher 的常客，United Choppers 1、2 和 Illest Choppers 2 都有他；NahDah 2021 版第 5。
+  sources:
+    - { title: 'YouTube – United Choppers 2（2016，简介写明"kVr-POLAND"）', url: 'https://www.youtube.com/watch?v=OhSs0hAsM1k' }
+    - { title: 'NahDah Vebb – 2021 版榜单曲目文档', url: 'https://docs.google.com/document/d/1UpOgX1BNIrPTK4F1JwibltfDSiVjJMLcQFbbmueJvUs' }
+- id: jp
+  name: 日本
+  en: Japan
+  geo: [36.2, 138.3]
+  summary: 日语说唱里把"早口"（语速快）当招牌的一路。嘯（usobuki）被日本乐评称为"日本最速"，合作曲《Time Ticking》那段是 NahDah 2023 版第 15；SOS 靠倍速翻唱走红，原创曲《Monster》排第 20。
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+- id: fi
+  name: 芬兰
+  en: Finland
+  geo: [64.0, 26.0]
+  summary: HeureCa 用芬兰语唱，通过奥地利的 Ruffian Rugged、匈牙利的 Dumanoid 进入 chopper 合作圈，《Onion Chopper》全明星 Remix 里那段是 NahDah 2023 版第 19。
+  sources:
+    - { title: 'YouTube – Ruffian & Dumanoid - Onion Chopper RMX（2024，简介标注"heureCa (Finland)"）', url: 'https://www.youtube.com/watch?v=QUdTwwol-x8' }
+- id: za
+  name: 南非
+  en: South Africa
+  geo: [-29.0, 25.0]
+  summary: 夸祖鲁-纳塔尔省的 Tuffo Da Bulletman 自称"非洲最快的 rapper"，2012 年上过《南非达人秀》，NahDah 2023 版第 18。
+  sources:
+    - { title: 'YouTube – SA''s Got Talent - Njabulo - Bulletman（e.tv，2012）', url: 'https://www.youtube.com/watch?v=QbGq2-xGMRE' }
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+- id: kw
+  name: 科威特
+  en: Kuwait
+  geo: [29.3, 47.5]
+  summary: 海湾地区的阿拉伯语说唱。Vortex 的 diss 曲《Gazra》里的高速段落是 NahDah 2023 版第 27，2024 年"每国最快"里也是科威特的代表。
+  sources:
+    - { title: 'NahDah Vebb – The Fastest Rapper from Every Country（2024）曲目表', url: 'https://docs.google.com/spreadsheets/d/1q6ccbONUj_yDxAbRCYVqQK5DLmxcQ4I6wlK_zVeaz0o' }
+- id: dk
+  name: 丹麦
+  en: Denmark
+  geo: [56.2, 9.5]
+  summary: 奥胡斯的 U$O 以双倍速说唱出名，2011 年在《Worldwide Choppers》里唱了全曲唯一的丹麦语段落。NahDah 团队 2024 年逐段测算的"每国最快"里，丹麦一栏是 Mund de Carlo。
+  sources:
+    - { title: 'Wikipedia – Worldwide Choppers', url: 'https://en.wikipedia.org/wiki/Worldwide_Choppers' }
+    - { title: 'Wikipedia – USO (rapper)', url: 'https://en.wikipedia.org/wiki/U$O' }
+- id: de
+  name: 德国
+  en: Germany
+  geo: [51.2, 10.4]
+  summary: 维基百科 Chopper 词条列出的德语代表有 Samy Deluxe、Kollegah、DCVDNS 等人；DCVDNS 2013 年的《German Choppers》借用了 Tech N9ne 的"Choppers"命名。德国的 ShimmyMC 也请过 Twisted Insane 合作《Thron》。
+  mentions: [Samy Deluxe, Kollegah, ShimmyMC]
+  sources:
+    - { title: 'Wikipedia – Chopper (rap)', url: 'https://en.wikipedia.org/wiki/Chopper_(rap)' }
+- id: fr
+  name: 法国
+  en: France
+  geo: [46.6, 2.4]
+  summary: 法语 chop 的代表是 MC Rice：他 2016 年起主持 Illest Choppers 系列，同年和 Interchopper 合作《Syllabic War》。NahDah 团队 2024 年逐段测算的"每国最快"里，法国一栏也是他（《#UC10CHALLENGE》，14.00）。
+  sources:
+    - { title: 'NahDah Vebb – The Fastest Rapper from Every Country（2024）曲目表', url: 'https://docs.google.com/spreadsheets/d/1q6ccbONUj_yDxAbRCYVqQK5DLmxcQ4I6wlK_zVeaz0o' }
+    - { title: 'YouTube – MC Rice Officiel 本人频道', url: 'https://www.youtube.com/@mcriceofficiel' }
+- id: it
+  name: 意大利
+  en: Italy
+  geo: [45.9, 13.1]
+  summary: 弗留利的 Wedere 是 SPS 圈测速委员会的成员，自己也唱：给 DOWN6 客串的《SHADOWS》是 NahDah 2024 年意大利一栏，《Infinite Choppers 3》的征选也是他赢的。
+  sources:
+    - { title: 'YouTube – Wedere：SHADOWS - RAP PIÙ VELOCE D''ITALIA（2024）', url: 'https://www.youtube.com/watch?v=n2Zj-3kt53Q' }
+- id: ru
+  name: 俄罗斯
+  en: Russia
+  geo: [55.75, 37.6]
+  summary: Faraway 的频道简介就叫"俄罗斯最快的 rapper"。他唱过《Infinite Choppers 2》《Unknown Cypher 5》，也和巴西的 Troll、中国的夏淳扬一起上过《Antares Convida》。
+  sources:
+    - { title: 'YouTube – Faraway 本人频道', url: 'https://www.youtube.com/@faraway_is_close' }
+

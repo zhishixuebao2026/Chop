@@ -1,0 +1,123 @@
+---
+import Logo from './Logo.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import { NAV } from '@/lib/site';
+import { url } from '@/lib/url';
+
+const path = Astro.url.pathname;
+const isActive = (href: string) => path.startsWith(url(href));
+---
+
+<header class="site-header sticky top-0 z-50">
+  <div class="container-x flex h-16 items-center gap-6">
+    <a href={url()} class="text-lg" aria-label="CHOP/ 首页"><Logo /></a>
+
+    <nav class="hidden flex-1 lg:block" aria-label="主导航">
+      <ul class="flex items-center gap-1">
+        {
+          NAV.map((n) => (
+            <li>
+              <a
+                href={url(n.href)}
+                class:list={['nav-link rounded-full px-3 py-1.5 text-sm text-ink-2 transition hover:text-ink', { 'is-active': isActive(n.href) }]}
+                data-nav={n.href}
+              >
+                {n.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-2 lg:ml-0">
+      <a
+        href={url('search/')}
+        class="hidden items-center gap-2 rounded-full border border-line px-3 py-1.5 text-sm text-ink-3 transition hover:border-line-strong hover:text-ink sm:inline-flex"
+      >
+        <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        搜索
+        <kbd class="font-mono text-xs text-ink-3">/</kbd>
+      </a>
+      <ThemeToggle />
+      <button
+        type="button"
+        class="menu-btn grid size-9 place-items-center rounded-full border border-line lg:hidden"
+        aria-label="打开菜单"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <svg class="size-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="mobile-nav lg:hidden" aria-label="移动端导航" hidden>
+    <ul class="container-x grid grid-cols-2 gap-1 pb-5 pt-2">
+      {
+        NAV.map((n) => (
+          <li>
+            <a href={url(n.href)} class="flex items-baseline justify-between rounded-xl px-3 py-3 text-lg font-display" data-nav={n.href}>
+              {n.label}
+              <span class="eyebrow">{n.en}</span>
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a href={url('search/')} class="flex items-baseline justify-between rounded-xl px-3 py-3 text-lg font-display">
+          搜索 <span class="eyebrow">Search</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 1px 0 color-mix(in oklab, var(--bg) 60%, transparent);
+  }
+  .nav-link.is-active {
+    color: var(--ink);
+    background: var(--surface-2);
+    box-shadow: inset 0 0 0 1px var(--line);
+  }
+  .mobile-nav a:hover,
+  .mobile-nav a.is-active {
+    background: var(--surface-2);
+  }
+  .mobile-nav {
+    border-top: 1px solid var(--line);
+  }
+</style>
+
+<script>
+  import { url } from '@/lib/url';
+
+  // 移动端导航也标出当前页
+  const path = location.pathname;
+  document.querySelectorAll<HTMLAnchorElement>('#mobile-nav [data-nav]').forEach((a) => {
+    if (path.startsWith(url(a.dataset.nav!))) a.classList.add('is-active');
+  });
+
+  const btn = document.querySelector<HTMLButtonElement>('.menu-btn');
+  const nav = document.getElementById('mobile-nav');
+  const setOpen = (open: boolean) => {
+    if (!btn || !nav) return;
+    nav.hidden = !open;
+    btn.setAttribute('aria-expanded', String(open));
+  };
+  btn?.addEventListener('click', () => setOpen(!!nav?.hidden));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setOpen(false);
+    // 按 "/" 打开搜索
+    const t = e.target as HTMLElement;
+    if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(t.tagName) && !t.isContentEditable) {
+      e.preventDefault();
+      location.href = location.hostname.endsWith('githack.com') ? url('search/index.html') : url('search/');
+    }
+  });
+</script>
