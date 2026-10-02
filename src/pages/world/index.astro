@@ -1,0 +1,273 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '@/layouts/Base.astro';
+import ArtistCard from '@/components/ArtistCard.astro';
+import TrackCard from '@/components/TrackCard.astro';
+import SpeedChart from '@/components/SpeedChart.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import Globe from '@/components/Globe.astro';
+import Confidence from '@/components/Confidence.astro';
+import LiteYouTube from '@/components/LiteYouTube.astro';
+import EveryCountry from '@/components/EveryCountry.astro';
+import { url } from '@/lib/url';
+import nahdah from '@/data/nahdah-2023.json';
+
+const artists = (await getCollection('artists', (a) => a.data.country !== 'CN')).sort(
+  (a, b) => (a.data.activeSince ?? 9999) - (b.data.activeSince ?? 9999),
+);
+const tracks = (await getCollection('tracks', (t) => t.data.scene === 'world')).sort((a, b) => (a.data.year ?? 0) - (b.data.year ?? 0));
+const events = (await getCollection('timeline', (e) => e.data.scene === 'world')).sort((a, b) => a.data.year - b.data.year);
+const wwc = tracks.find((t) => t.id === 'worldwide-choppers');
+const cypher = (await getCollection('cyphers')).find((c) => c.id === 'infinite-choppers-1');
+const cypherTrack = tracks.find((t) => t.data.youtube === cypher?.data.youtube);
+const cypherMax = cypher ? Math.ceil(Math.max(...cypher.data.entries.map((e) => e.sps)) / 5) * 5 : 25;
+// 本站建档的人物，表格里可以直接链过去
+const profiled = new Map(artists.map((a) => [a.data.name.toLowerCase(), a.id]));
+// NahDah Vebb 2023 榜：前 30 名 + 本站收录的人
+const ndMax = Math.ceil(Math.max(...nahdah.map((e) => e.sps)) / 5) * 5;
+const ND = {
+  video: 'https://www.youtube.com/watch?v=4SjqPAqjsWo',
+  docs: [
+    ['方法 FAQ', 'https://docs.google.com/document/d/1zPWDPfnmmfRIuuskCmTMeTlWTjY9uc9NQ2nM3MU-mCU'],
+    ['除名说明', 'https://docs.google.com/document/d/1DfcPmT5YCWYwDRP-uyFMEthi9n7ctGRsK2C3QxiFJrA'],
+    ['150 条逐条测算', 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA'],
+  ],
+};
+---
+
+<Base title="世界" description="世界 chopper 地图：从美国中西部到土耳其、韩国、菲律宾，在点阵地球上看 chopper 如何传播。">
+  <section class="world-hero relative overflow-hidden border-b border-line">
+    <div class="container-x relative pb-10 pt-16 md:pt-24">
+      <p class="eyebrow !text-accent-text">World · 世界</p>
+      <h1 class="mt-5 text-[clamp(3rem,10vw,7.5rem)] font-bold leading-[0.95]">世界 <span class="text-accent-text">Chop</span></h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
+        Chop 1990 年代初在美国中西部兴起，后来被 Tech N9ne 做成跨国企划。
+      </p>
+    </div>
+  </section>
+
+  <section class="container-x pt-14">
+    <Globe initial="us" />
+  </section>
+
+  {
+    wwc && (
+      <section class="container-x pt-28">
+        <SectionHeading index="01" eyebrow="Worldwide Choppers" title="一首歌，三种语言" />
+        <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+          <div class="flex min-w-0">
+            <TrackCard track={wwc} />
+          </div>
+          <div class="card p-6 sm:p-8">
+            <p class="leading-relaxed text-ink-2">
+              2011 年，Tech N9ne 在专辑 <em>All 6's and 7's</em> 里召集了美国、土耳其和丹麦的 chopper，完成了 "Worldwide Choppers"。歌词里有<strong class="text-ink">英语、丹麦语和土耳其语</strong>，录音分别在堪萨斯城、芝加哥、纽约、加州、土耳其和丹麦完成。
+            </p>
+            <p class="mt-4 leading-relaxed text-ink-2">地球上的虚线，是从堪萨斯城连向其他参与者城市的合作线。</p>
+            <p class="mt-4 text-sm"><a class="link-u text-ink-3 hover:text-ink" href="https://en.wikipedia.org/wiki/Worldwide_Choppers" target="_blank" rel="noopener nofollow">Wikipedia – Worldwide Choppers ↗</a></p>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    cypher && (
+      <section id="sps" class="container-x scroll-mt-24 pt-28">
+        <SectionHeading index="02" eyebrow="SPS & the 1-second race" title="SPS：只比 1 秒的速度竞赛">
+          <p class="mt-4 max-w-3xl text-ink-2">
+            SPS 是 syllables per second（每秒音节数）。海外有个圈子在 YouTube 和 Discord 上"测速"：截取 1 秒左右的爆发段落，写出"音节数 / 秒数"的算式。数字因此可以核对，也催生了只追数字的风气。
+          </p>
+        </SectionHeading>
+
+        <div class="card mb-6 grid gap-4 p-5 sm:grid-cols-[auto_1fr] sm:items-start sm:gap-6 sm:p-6" style="border-left:3px solid var(--style-fast)">
+          <p class="font-display text-2xl font-semibold whitespace-nowrap" style="color:var(--style-fast)">"SPS kid"</p>
+          <div class="text-sm leading-relaxed text-ink-2">
+            <p>圈内的贬义说法，专指<strong class="text-ink">刚入圈、只追求速度</strong>的新人小孩：为了多塞音节而含糊吐字、甚至胡乱发音；靠剪辑拼接、后期加速堆数字；只挑最快的 1 秒来算，甚至夸大测算结果。Rap Wiki 写道，"网上的小孩只想找最快的那一秒"；2024 年还有人试图把纪录规则改成只比 1 秒爆发。</p>
+            <p class="mt-2">表里比的是<strong class="text-ink">1 秒爆发</strong>的速度。<a href={url('learn/what-is-chop/')} class="link-u text-ink">快嘴 ≠ Chop →</a></p>
+          </div>
+        </div>
+
+        <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
+          <div>
+            <LiteYouTube id={cypher.data.youtube} title={`${cypher.data.host} - ${cypher.data.title}`} channel={cypher.data.host} official bilibili={cypherTrack?.data.bilibili} netease={cypherTrack?.data.netease} />
+            <div class="card mt-5 p-5 text-sm leading-relaxed text-ink-2">
+              <p class="font-semibold text-ink">{cypher.data.host} – {cypher.data.title}</p>
+              <p class="mt-2">{cypher.data.note}</p>
+              <p class="mt-3 rounded-xl border border-line bg-surface-2 p-3 text-xs">
+                <strong class="text-ink">复算：</strong>表里 {cypher.data.entries.length} 条按"音节数 ÷ 秒数"复算，和 wiki 数值一致；数字来自单一社区来源，整体标"待核实"。
+              </p>
+              <p class="mt-3 text-xs text-ink-3">
+                表中为参与者公开使用的艺名。
+              </p>
+              <p class="mt-3 flex flex-wrap gap-x-4 text-xs">
+                {cypher.data.sources.map((s) => <a href={s.url} target="_blank" rel="noopener nofollow" class="link-u text-ink-3 hover:text-ink">{s.title} ↗</a>)}
+              </p>
+            </div>
+          </div>
+
+          <div class="card p-5 sm:p-6">
+            <div class="flex items-center justify-between gap-3">
+              <p class="eyebrow">逐人爆发速度 · 测算：{cypher.data.calculator}</p>
+              <Confidence level="pending" />
+            </div>
+            <ol class="cy-list mt-4 grid gap-1.5">
+              {cypher.data.entries.map((e, i) => {
+                const slug = profiled.get(e.name.toLowerCase());
+                return (
+                  <li class="cy-row grid items-center gap-3" style={`--w:${(e.sps / cypherMax) * 100}%;--i:${i}`}>
+                    <span class="font-mono text-xs tabular-nums text-ink-3">{String(i + 1).padStart(2, '0')}</span>
+                    <span class="min-w-0">
+                      <span class="flex items-baseline justify-between gap-2">
+                        {slug ? (
+                          <a href={url(`choppers/${slug}/`)} class="truncate text-sm font-semibold text-accent-text link-u">{e.name} →</a>
+                        ) : (
+                          <span class="truncate text-sm font-semibold">{e.name}</span>
+                        )}
+                        <span class="shrink-0 font-mono text-xs text-ink-3">{e.syllables}/{e.seconds.toFixed(3)}</span>
+                      </span>
+                      {'flag' in e && e.flag && <span class="nd-flag mt-1 inline-block">{e.flag}</span>}
+                      <span class="cy-bar mt-1 block h-1.5 rounded-full" />
+                    </span>
+                    <span class="text-right font-mono text-sm tabular-nums">{e.sps}</span>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+        </div>
+
+        <div class="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
+          <div class="card p-5 text-sm leading-relaxed text-ink-2 sm:p-6">
+            <p class="eyebrow">另一份榜单</p>
+            <p class="mt-2 text-lg font-semibold text-ink">NahDah Vebb《Top 150 Fastest Rappers》</p>
+            <p class="mt-1 text-xs text-ink-3">2022 年 7 月重做，2023 年 1 月 30 日发布 · 美洲一派的测速圈</p>
+            <p class="mt-3">NahDah 2017、2021 版已被他自己标为 outdated。2023 版起系统化：150 人每人附一段 1 秒左右的录音和逐音节拆分，复查三遍。</p>
+            <ul class="mt-3 grid gap-1.5">
+              <li>· 窗口<strong class="text-ink">满 1 秒</strong>（圈里一般要求 0.7 秒以上，满 1 秒含金量更高），只数真正唱出来的音节</li>
+              <li>· 只收<strong class="text-ink">正式录音室歌曲</strong>：清唱、现场、吉尼斯挑战都不算</li>
+              <li>· 最快那首被发现<strong class="text-ink">加速或拼接</strong>，这个人直接除名</li>
+            </ul>
+            <p class="mt-3 rounded-xl border border-line bg-surface-2 p-3 text-xs">
+              <strong class="text-ink">复算：</strong>150 条里只有第 118 名 MZ 对不上（写 13.90，算式 13.79）。榜上没有中国 rapper；此后的新纪录不在内。
+            </p>
+            <p class="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs">
+              <a href={url('lab/#rules')} class="link-u font-semibold text-ink">看完整测速规则 →</a>
+              <a href={ND.video} target="_blank" rel="noopener nofollow" class="link-u text-ink-3 hover:text-ink">YouTube 视频 ↗</a>
+              <a href="https://www.bilibili.com/video/BV1hT411d7aa/" target="_blank" rel="noopener" class="link-u text-ink-3 hover:text-ink">B 站搬运 ↗</a>
+              {ND.docs.map(([t, u]) => <a href={u} target="_blank" rel="noopener nofollow" class="link-u text-ink-3 hover:text-ink">{t} ↗</a>)}
+            </p>
+          </div>
+
+          <div class="card p-5 sm:p-6">
+            <div class="flex items-center justify-between gap-3">
+              <p class="eyebrow">1 秒爆发 · 前 30 名和站内有档案的人</p>
+            </div>
+            <ol class="cy-list nd-list mt-4 grid gap-1.5">
+              {nahdah.map((e, i) => {
+                const slug = profiled.get(e.name.toLowerCase());
+                const gap = i > 0 && e.rank - nahdah[i - 1].rank > 1;
+                return (
+                  <li class:list={['cy-row grid items-center gap-3', { 'nd-gap': gap }]} style={`--w:${(e.sps / ndMax) * 100}%;--i:${i}`}>
+                    <span class="font-mono text-xs tabular-nums text-ink-3">#{e.rank}</span>
+                    <span class="min-w-0">
+                      <span class="flex flex-col gap-x-2 sm:flex-row sm:items-baseline sm:justify-between">
+                        {slug ? (
+                          <a href={url(`choppers/${slug}/`)} class="truncate text-sm font-semibold text-accent-text link-u">{e.name} →</a>
+                        ) : (
+                          <span class="truncate text-sm font-semibold">{e.name}</span>
+                        )}
+                        <span class="min-w-0 truncate font-mono text-xs text-ink-3" title={e.song}>{e.syllables}/{e.seconds.toFixed(3)} · {e.song}</span>
+                      </span>
+                      <span class="cy-bar mt-1 block h-1.5 rounded-full" />
+                    </span>
+                    <span class="text-right font-mono text-sm tabular-nums">{e.sps.toFixed(2)}</span>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <section id="every-country" class="container-x scroll-mt-24 pt-28">
+    <SectionHeading index="03" eyebrow="Every country · 2024" title="每个国家最快的一位" />
+    <EveryCountry />
+  </section>
+
+  <section class="container-x pt-28">
+    <SectionHeading index="04" eyebrow="People" title="世界人物" href="choppers/?scene=world" linkLabel="在人物库里筛选" />
+    <div class="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+      {artists.slice(0, 12).map((a) => <ArtistCard artist={a} />)}
+    </div>
+    {artists.length > 12 && (
+      <a href={url('choppers/?scene=world')} class="btn btn-ghost mt-6 w-full justify-center sm:w-auto">人物库里看全部 {artists.length} 位 →</a>
+    )}
+  </section>
+
+  <section class="container-x pt-28">
+    <SectionHeading index="05" eyebrow="Speed" title="世界语速数据" href="learn/measuring-speed/" linkLabel="数据怎么测" />
+    <div class="card p-5 sm:p-8"><SpeedChart scene="world" /></div>
+  </section>
+
+  <section class="container-x pt-28">
+    <SectionHeading index="06" eyebrow="Tracks" title="世界曲目" href="tracks/?scene=world" linkLabel="曲目库" />
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {tracks.slice(-9).reverse().map((t) => <div class="flex min-w-0"><TrackCard track={t} /></div>)}
+    </div>
+    {tracks.length > 9 && (
+      <a href={url('tracks/?scene=world')} class="btn btn-ghost mt-6 w-full justify-center sm:w-auto">曲目库里看全部 {tracks.length} 首世界曲目 →</a>
+    )}
+  </section>
+
+  <section class="container-x pt-28">
+    <SectionHeading index="07" eyebrow="History" title="世界 Chop 时间线" href="timeline/?scene=world" linkLabel="完整时间线" />
+    <ol class="grid gap-3">
+      {
+        events.map((e) => (
+          <li class="grid grid-cols-[5.25rem_minmax(0,1fr)] gap-3 sm:grid-cols-[6rem_minmax(0,1fr)] sm:gap-4">
+            <span class="font-display text-2xl font-semibold tabular-nums text-accent-text sm:text-3xl">{e.data.year}</span>
+            <div class="card p-4 sm:p-5">
+              <p class="flex flex-wrap items-center gap-2 font-semibold">
+                <a href={url(`timeline/#${e.id}`)} class="link-u hover:text-accent-text">{e.data.title}</a>
+                {e.data.confidence !== 'verified' && <Confidence level={e.data.confidence} />}
+              </p>
+              <p class="mt-1.5 text-sm leading-relaxed text-ink-2">{e.data.body}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+</Base>
+
+<style>
+  .world-hero {
+    background:
+      radial-gradient(70% 90% at 100% 0%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 70%),
+      var(--bg);
+  }
+  .cy-row {
+    grid-template-columns: 1.5rem minmax(0, 1fr) 3rem;
+  }
+  .nd-list .cy-row {
+    grid-template-columns: 2.4rem minmax(0, 1fr) 3rem;
+  }
+  .nd-gap {
+    margin-top: 0.5rem;
+    padding-top: 0.6rem;
+    border-top: 1px dashed var(--line);
+  }
+  .cy-bar {
+    background: linear-gradient(90deg, var(--accent) var(--w), var(--line) var(--w));
+  }
+  .nd-flag {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    padding: 0.05rem 0.45rem;
+    border-radius: 999px;
+    color: var(--critical);
+    background: color-mix(in oklab, var(--critical) 12%, transparent);
+  }
+</style>

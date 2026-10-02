@@ -1,0 +1,222 @@
+---
+/**
+ * 世界 Chop 地图：点阵地球 + 国家/场景面板。
+ * 地球脚本在进入视口时才加载（动态 import），加载前显示同尺寸的占位，避免布局跳动。
+ */
+import { getCollection } from 'astro:content';
+import Avatar from './Avatar.astro';
+import StyleChip from './StyleChip.astro';
+import { displayName, placeLabel } from '@/lib/labels';
+import { url } from '@/lib/url';
+
+interface Props { initial?: string }
+const { initial = 'us' } = Astro.props;
+
+const scenes = (await getCollection('scenes')).sort((a, b) => (a.id === 'us' ? -1 : b.id === 'us' ? 1 : a.id === 'cn' ? -1 : b.id === 'cn' ? 1 : 0));
+const artists = await getCollection('artists');
+
+const markers = [
+  ...scenes.map((s) => ({ id: s.id, name: s.data.name, lat: s.data.geo[0], lon: s.data.geo[1], kind: 'scene', tone: s.id === 'cn' ? 'china' : 'world' })),
+  ...artists
+    .filter((a) => a.data.geo)
+    .map((a) => ({ id: `city:${a.id}`, name: displayName(a.data), lat: a.data.geo![0], lon: a.data.geo![1], kind: 'city', tone: a.data.country === 'CN' ? 'china' : 'world' })),
+];
+// 连线：同一首歌里合作过的国家（曲库 tracks + 系列 series 的名单，只算站内有档案的人），越粗合作越多
+const tracks = await getCollection('tracks');
+const series = await getCollection('series');
+const countryOf = new Map(artists.map((a) => [a.id, a.data.country.toLowerCase()]));
+const sceneGeo = new Map(scenes.map((s) => [s.id, s.data.geo as [number, number]]));
+const pairCount = new Map<string, number>();
+const songs: string[][] = [
+  ...tracks.map((t) => t.data.artists.map((a) => a.id)),
+  ...series.flatMap((s) => s.data.episodes.map((ep) => ep.lineup.map((r) => (r.includes('@') ? r.slice(r.lastIndexOf('@') + 1) : '')).filter(Boolean))),
+];
+for (const ids of songs) {
+  const cs = [...new Set(ids.map((id) => countryOf.get(id)).filter((c): c is string => !!c && sceneGeo.has(c)))].sort();
+  for (let i = 0; i < cs.length; i++) for (let j = i + 1; j < cs.length; j++) pairCount.set(`${cs[i]}|${cs[j]}`, (pairCount.get(`${cs[i]}|${cs[j]}`) ?? 0) + 1);
+}
+const arcs = [...pairCount].map(([k, w]) => {
+  const [a, b] = k.split('|');
+  return { from: sceneGeo.get(a)!, to: sceneGeo.get(b)!, w, tone: a === 'cn' || b === 'cn' ? 'china' : 'world' };
+});
+
+// 场景 id 就是小写的国家代码（us → US），每个国家收录的人物全部列出
+const panels = scenes.map((s) => ({
+  scene: s,
+  people: artists.filter((a) => a.data.country === s.id.toUpperCase()).sort((a, b) => (a.data.activeSince ?? 9999) - (b.data.activeSince ?? 9999)),
+}));
+// 手机上每个国家先显示几位
+const PEOPLE_SHOW = 8;
+---
+
+<section class="globe-block" data-initial={initial}>
+  <div class="grid items-start gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12">
+    <div class="relative lg:sticky lg:top-24">
+      <div class="globe-stage relative mx-auto aspect-square w-full max-w-[640px]">
+        <div class="globe-placeholder absolute inset-[8%] rounded-full" aria-hidden="true"></div>
+        <canvas class="globe-canvas absolute inset-0 size-full touch-none" aria-label="世界 Chop 地图：拖动旋转，点击标记查看当地情况" role="img"></canvas>
+        <script type="application/json" class="globe-data" set:html={JSON.stringify({ markers, arcs })} />
+      </div>
+      <p class="mt-2 text-center text-xs text-ink-3">拖动旋转 · 点击标记 · 虚线连接同一首歌里合作过的国家，越粗越多</p>
+    </div>
+
+    <div class="min-w-0">
+      <div class="scene-tabs -mx-4 flex gap-2 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-wrap lg:gap-1.5 lg:overflow-visible lg:px-0" role="tablist" aria-label="选择国家或地区">
+        {
+          scenes.map((s) => (
+            <button type="button" role="tab" class="scene-tab chip shrink-0 cursor-pointer" data-scene={s.id} aria-selected={s.id === initial ? 'true' : 'false'} aria-controls={`scene-${s.id}`}>
+              <span class="size-1.5 rounded-full" style={`background:var(${s.id === 'cn' ? '--scene-china' : '--scene-world'})`} />
+              {s.data.name}
+            </button>
+          ))
+        }
+      </div>
+
+      {
+        panels.map(({ scene: s, people }) => (
+          <article id={`scene-${s.id}`} role="tabpanel" class="scene-panel card mt-4 p-5 sm:p-6" data-scene={s.id} hidden={s.id !== initial}>
+            <p class="eyebrow">{s.data.en}</p>
+            <h3 class="mt-2 text-2xl font-semibold sm:text-3xl">{s.data.name}</h3>
+            <p class="mt-3 leading-relaxed text-ink-2">{s.data.summary}</p>
+
+            {people.length > 0 && (
+              <ul class="people mt-5 grid grid-cols-1 gap-2">
+                {people.map((a, k) => (
+                  <li class:list={{ 'is-more': k >= PEOPLE_SHOW }}>
+                    <a href={url(`choppers/${a.id}/`)} class="group flex items-center gap-3 rounded-xl border border-line p-2 pr-3 transition hover:border-line-strong">
+                      <Avatar id={a.id} data={a.data} widths={[96]} sizes="44px" class="size-11 shrink-0 overflow-hidden rounded-lg object-cover" />
+                      <span class="min-w-0 flex-1">
+                        <span class="block truncate font-semibold">{displayName(a.data)}</span>
+                        <span class="block truncate text-xs text-ink-3">{placeLabel(a.data)}</span>
+                      </span>
+                      <StyleChip style={a.data.style} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {people.length > PEOPLE_SHOW && (
+              <button type="button" class="people-more btn btn-ghost mt-3 w-full justify-center text-sm lg:hidden" data-n={people.length}>
+                展开全部 {people.length} 位
+              </button>
+            )}
+
+            {s.data.mentions.length > 0 && (
+              <p class="mt-4 text-sm text-ink-3">
+                另有：<span class="text-ink-2">{s.data.mentions.join('、')}</span>
+              </p>
+            )}
+
+            <div class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+              {s.data.link && (
+                <a href={url(s.data.link)} class="btn btn-accent text-sm">
+                  进入中国区 →
+                </a>
+              )}
+              {s.data.sources.map((src, i) => (
+                <a href={src.url} target="_blank" rel="noopener nofollow" class="link-u text-xs text-ink-3 hover:text-ink">
+                  来源 {i + 1} ↗
+                </a>
+              ))}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .globe-placeholder {
+    background: radial-gradient(circle at 35% 30%, color-mix(in oklab, var(--ink) 8%, transparent), transparent 70%);
+    box-shadow: 0 0 80px color-mix(in oklab, var(--accent) 12%, transparent);
+    transition: opacity 0.6s ease;
+  }
+  .globe-block.is-ready .globe-placeholder {
+    opacity: 0;
+  }
+  .globe-canvas {
+    cursor: grab;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  .globe-block.is-ready .globe-canvas {
+    opacity: 1;
+  }
+  .globe-canvas:active {
+    cursor: grabbing;
+  }
+  .scene-tab[aria-selected='true'] {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .scene-tabs {
+    scrollbar-width: none;
+  }
+  /* 手机上人物多的国家先显示前几位，点"展开全部"再看其余 */
+  @media (max-width: 1023.98px) {
+    .people:not(.show-all) .is-more {
+      display: none;
+    }
+  }
+  /* 电脑上人物多的国家（如美国）列表在框内滚动，不把整块拉长 */
+  @media (min-width: 1024px) {
+    .people {
+      max-height: min(56vh, 520px);
+      overflow-y: auto;
+      padding-right: 4px;
+      scrollbar-width: thin;
+      overscroll-behavior: contain;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.globe-block').forEach((block) => {
+    const canvas = block.querySelector<HTMLCanvasElement>('.globe-canvas')!;
+    const data = JSON.parse(block.querySelector('.globe-data')!.textContent!);
+    const tabs = [...block.querySelectorAll<HTMLButtonElement>('.scene-tab')];
+    const panels = [...block.querySelectorAll<HTMLElement>('.scene-panel')];
+    let api: { select: (id: string) => void } | undefined;
+    block.querySelectorAll<HTMLButtonElement>('.people-more').forEach((btn) =>
+      btn.addEventListener('click', () => {
+        const list = btn.previousElementSibling as HTMLElement | null;
+        const on = list?.classList.toggle('show-all');
+        btn.textContent = on ? '收起' : `展开全部 ${btn.dataset.n} 位`;
+      }),
+    );
+
+    const show = (id: string) => {
+      tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.scene === id)));
+      panels.forEach((p) => (p.hidden = p.dataset.scene !== id));
+      tabs.find((t) => t.dataset.scene === id)?.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+    };
+    tabs.forEach((t) =>
+      t.addEventListener('click', () => {
+        show(t.dataset.scene!);
+        api?.select(t.dataset.scene!);
+      }),
+    );
+
+    // 进入视口附近才加载地球脚本
+    const io = new IntersectionObserver(
+      async ([e]) => {
+        if (!e.isIntersecting) return;
+        io.disconnect();
+        const { mountGlobe } = await import('@/scripts/globe');
+        const initial = data.markers.find((m: { id: string }) => m.id === block.dataset.initial);
+        api = mountGlobe(canvas, {
+          markers: data.markers,
+          arcs: data.arcs,
+          start: initial ? [initial.lon, initial.lat * 0.8] : undefined,
+          onSelect: (id) => show(id),
+        });
+        api.select(block.dataset.initial!);
+        block.classList.add('is-ready');
+      },
+      { rootMargin: '300px 0px' },
+    );
+    io.observe(block);
+  });
+</script>

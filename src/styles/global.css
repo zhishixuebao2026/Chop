@@ -1,0 +1,419 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/unbounded';
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/jetbrains-mono';
+
+/* 主题切换走 data-theme，和系统设置配合（见 Base.astro 里的首帧脚本） */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/* ---------- 设计令牌 ---------- */
+:root {
+  color-scheme: light;
+  /* 红黑金：暖纸底 + 墨黑 + 朱红 + 暗金 */
+  --bg: #f5efe4;
+  --bg-2: #ede4d4;
+  --surface: #fffaf1;
+  --surface-2: #f8f1e5;
+  --line: #e0d4c0;
+  --line-strong: #c4b39a;
+  --ink: #140e0a;
+  --ink-2: #4a3f35;
+  --ink-3: #6a5d4f;
+  --accent: #d9a62b; /* 金，作为底色使用 */
+  --accent-ink: #140e0a; /* 金底上的文字 */
+  --accent-text: #8a5a00; /* 金作为文字时的加深版 */
+  --hot: #c8211b;
+  --style-chopper: #8a5a00;
+  --style-fast: #c8211b;
+  --tone-muted: #6b6358;
+  --scene-china: #c8211b;
+  --scene-world: #8a5a00;
+  --good: #3d7a4a;
+  --warning: #955700;
+  --serious: #c85a2e;
+  --critical: #b3261e;
+  --neutral: #6a5d4f;
+  --shadow: 0 1px 0 rgb(0 0 0 / 0.04), 0 12px 32px -12px rgb(60 30 10 / 0.2);
+  /* 辅助色板：系列、地区、章节编号这类需要区分的地方轮流用，主色仍是朱红和金 */
+  --p1: #c8211b;
+  --p2: #8f5f05;
+  --p3: #1f7a6c;
+  --p4: #8e3a6e;
+  --p5: #b0500f;
+  --p6: #5f6f1f;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a0807;
+  --bg-2: #100c0a;
+  --surface: #1f1813;
+  --surface-2: #281f19;
+  --line: #43362c;
+  --line-strong: #66554a;
+  --ink: #f6efe3;
+  --ink-2: #c7b9a5;
+  --ink-3: #a19380;
+  --accent: #e8b84a;
+  --accent-ink: #120c07;
+  --accent-text: #f0c75e;
+  --hot: #ff4b3e;
+  --style-chopper: #f0c75e;
+  --style-fast: #ff5a4a;
+  --tone-muted: #b9ae9e;
+  --scene-china: #ff4b3e;
+  --scene-world: #f0c75e;
+  --good: #7cbf86;
+  --warning: #f5a524;
+  --serious: #ec835a;
+  --critical: #ff6b5e;
+  --neutral: #a19380;
+  --shadow: 0 1px 0 rgb(255 255 255 / 0.03), 0 20px 40px -20px rgb(0 0 0 / 0.8);
+  --p1: #ff5a4a;
+  --p2: #e8b84a;
+  --p3: #45c2a8;
+  --p4: #e08cc2;
+  --p5: #ff9d55;
+  --p6: #b9c65a;
+}
+
+@theme inline {
+  /* 字号下限：text-xs 12px→13px，text-sm 14px→15px（视力不好的读者也能看清） */
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.35rem;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5rem;
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-text: var(--accent-text);
+  --color-hot: var(--hot);
+  --color-china: var(--scene-china);
+  --color-world: var(--scene-world);
+
+  --font-display: 'Unbounded Variable', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  --font-sans: 'Space Grotesk Variable', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-rise: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+/* ---------- 基础 ---------- */
+@layer base {
+  /* 只在主屏幕 / App 模式下去掉双击放大（Base.astro 里加的 class），普通网页照常缩放 */
+  html.app-mode {
+    touch-action: manipulation;
+  }
+  html {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+    /* 手机上防止内容略宽于屏幕时，上下滑动带出左右晃动 */
+    overflow-x: clip;
+  }
+  body {
+    background: var(--bg);
+    min-height: 100dvh;
+    overflow-x: clip;
+  }
+  /* 纸张颗粒：很淡的噪点，让大面积底色不那么平 */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent-text);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
+  @media (min-width: 768px) {
+    .container-x {
+      padding-inline: 32px;
+    }
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+  }
+  :root[data-theme='dark'] .card,
+  :root[data-theme='dark'] .artist-card {
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.07), 0 10px 24px -18px rgb(0 0 0 / 0.9);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    padding: 0.2em 0.65em;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    color: var(--ink-2);
+    background: var(--surface-2);
+    white-space: nowrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.15rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition:
+      transform 0.15s ease,
+      background 0.2s ease,
+      border-color 0.2s ease;
+  }
+  .btn:active {
+    transform: scale(0.97);
+  }
+  .btn-accent {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  .btn-accent:hover {
+    background: color-mix(in oklab, var(--accent) 85%, white);
+  }
+  .btn-ghost {
+    border: 1px solid var(--line-strong);
+    color: var(--ink);
+  }
+  .btn-ghost:hover {
+    border-color: var(--ink);
+  }
+
+  .link-u {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+    transition: background-size 0.3s ease;
+  }
+  .link-u:hover {
+    background-size: 100% 1px;
+  }
+
+  /* 文章排版（百科、人物简介） */
+  .prose-chop {
+    color: var(--ink-2);
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .prose-chop > * + * {
+    margin-top: 1.1em;
+  }
+  .prose-chop h2 {
+    color: var(--ink);
+    font-size: 1.35rem;
+    margin-top: 2.2em;
+    padding-top: 0.2em;
+  }
+  .prose-chop h3 {
+    color: var(--ink);
+    font-size: 1.08rem;
+    margin-top: 1.8em;
+  }
+  .prose-chop strong {
+    color: var(--ink);
+    font-weight: 650;
+  }
+  .prose-chop a {
+    color: var(--accent-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .prose-chop ul,
+  .prose-chop ol {
+    padding-left: 1.3em;
+  }
+  .prose-chop ul {
+    list-style: disc;
+  }
+  .prose-chop ol {
+    list-style: decimal;
+  }
+  .prose-chop li + li {
+    margin-top: 0.4em;
+  }
+  .prose-chop li::marker {
+    color: var(--ink-3);
+  }
+  .prose-chop blockquote {
+    border-left: 3px solid var(--accent);
+    background: var(--surface-2);
+    padding: 0.8em 1.1em;
+    border-radius: 0 12px 12px 0;
+    color: var(--ink-2);
+    font-size: 0.95rem;
+  }
+  .prose-chop .table-wrap {
+    overflow-x: auto;
+  }
+  .prose-chop table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  /* 四列以上的表在手机上挤成窄条：给个最小宽度，放不下就在外框里横向滑 */
+  .prose-chop table:has(th:nth-child(4)) {
+    min-width: 36rem;
+  }
+  .prose-chop th,
+  .prose-chop td {
+    border-bottom: 1px solid var(--line);
+    padding: 0.6em 0.8em;
+    text-align: left;
+    vertical-align: top;
+  }
+  .prose-chop th {
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .prose-chop code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    padding: 0.1em 0.35em;
+    border-radius: 6px;
+  }
+}
+
+/* 系统开了"减少动态效果"：不把动画全部清零（步进器、滚动名字带、地球本身就是内容），
+   只关掉入场的上浮效果和平滑滚动，滚动文字带放慢。 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-rise {
+    animation: none !important;
+  }
+  .animate-marquee {
+    animation-duration: 80s;
+  }
+}
+
+/* ---------- 列表页页头：多色光斑 + 点阵 + 大号描边水印 ---------- */
+.page-hero {
+  position: relative;
+  isolation: isolate;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -6rem -50vw 0;
+  background:
+    radial-gradient(38rem 20rem at 12% 20%, color-mix(in oklab, var(--hero-a, var(--p1)) 13%, transparent), transparent 70%),
+    radial-gradient(30rem 18rem at 78% 10%, color-mix(in oklab, var(--hero-b, var(--p3)) 12%, transparent), transparent 70%),
+    radial-gradient(26rem 16rem at 60% 90%, color-mix(in oklab, var(--hero-c, var(--p2)) 12%, transparent), transparent 70%),
+    radial-gradient(color-mix(in oklab, var(--ink) 10%, transparent) 1px, transparent 1.2px) 0 0 / 22px 22px;
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  pointer-events: none;
+}
+.page-hero[data-wm]::after {
+  content: attr(data-wm);
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(4rem, 14vw, 11rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in oklab, var(--hero-a, var(--p1)) 26%, transparent);
+  pointer-events: none;
+  white-space: nowrap;
+  max-width: 60%;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .page-hero[data-wm]::after {
+    display: none;
+  }
+}
+
+/* ---------- 分区主色 ----------
+   在任意容器上写 data-hue="teal" 等，容器内所有用到 --accent 的地方（按钮、章节编号、图表、表头）一起换色。
+   不写则保持默认的金色。金/朱红本身在曲目、人物里有"chopper / 快嘴"的含义，所以百科和实验室才用这几组辅助色。 */
+[data-hue='red'] { --accent: #c8211b; --accent-text: #b3261e; --accent-ink: #fffaf1; }
+[data-hue='teal'] { --accent: #1f7a6c; --accent-text: #17695c; --accent-ink: #fffaf1; }
+[data-hue='plum'] { --accent: #8e3a6e; --accent-text: #7d2f60; --accent-ink: #fffaf1; }
+[data-hue='orange'] { --accent: #b0500f; --accent-text: #9a4309; --accent-ink: #fffaf1; }
+[data-hue='violet'] { --accent: #7c3aed; --accent-text: #6d28d9; --accent-ink: #ffffff; }
+[data-hue='olive'] { --accent: #5f6f1f; --accent-text: #515f17; --accent-ink: #fffaf1; }
+:root[data-theme='dark'] [data-hue='red'] { --accent: #ff5a4a; --accent-text: #ff8274; --accent-ink: #1a0705; }
+:root[data-theme='dark'] [data-hue='teal'] { --accent: #45c2a8; --accent-text: #6fd6bf; --accent-ink: #07120f; }
+:root[data-theme='dark'] [data-hue='plum'] { --accent: #e08cc2; --accent-text: #ecaad4; --accent-ink: #1c0a15; }
+:root[data-theme='dark'] [data-hue='orange'] { --accent: #ff9d55; --accent-text: #ffb67c; --accent-ink: #1c0d02; }
+:root[data-theme='dark'] [data-hue='violet'] { --accent: #a78bfa; --accent-text: #c4b5fd; --accent-ink: #120a2a; }
+:root[data-theme='dark'] [data-hue='olive'] { --accent: #b9c65a; --accent-text: #cbd77a; --accent-ink: #12150a; }

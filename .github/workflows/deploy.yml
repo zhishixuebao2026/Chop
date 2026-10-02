@@ -1,0 +1,73 @@
+name: 部署到 GitHub Pages
+
+on:
+  push:
+    branches: [main, 'arena/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build
+      # 把线上当前版本的 CSS / JS 一起带上，浏览器里缓存的旧页面才不会丢样式
+      - run: node scripts/keep-live-assets.mjs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  # 构建在线分支预览版本（支持 raw.githack.com 直接打开预览），推送到 site 分支
+  package-root:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      BASE_PATH: /${{ github.repository }}/site
+      SITE_URL: https://raw.githack.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: node scripts/githack-links.mjs
+      # Windows 本地预览脚本，只放进 site 分支，不进 GitHub Pages
+      - run: cp scripts/local-preview/* dist/
+      - name: 推送到 site 分支
+        run: |
+          cd dist
+          git init -q -b site
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "构建自 ${GITHUB_SHA::7}（在线分支预览版本）"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" site
