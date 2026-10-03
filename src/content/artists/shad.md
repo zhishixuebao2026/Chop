@@ -46,6 +46,8 @@ sources:
 
 Shad 是巴西的 rapper，唱葡萄牙语。NahDah 2021 版的榜单卡片上标的是巴西。在巴西的测速圈里，他是公认的"全国最快"：TrollatorBR 2021 年的巴西前 50 名、BruCalcs 2020 年的巴西榜，第 1 名都是他，而且和第 2 名差了一大截（TrollatorBR 那份，第 2 名 MC Igu 是 15）。TrollatorBR 2020 年的世界前 10 名，也把他排在第 1。
 
+> **说明：** 由于私下生活及经历等原因，Shad 曾被其他榜单除名并带来恶劣影响。本站只中立记录与 chop / 快嘴相关的公开作品与测速资料，对此不做评价。
+
 ## 《FreeZeTyler》
 
 他最出名的就是《**FreeZeTyler**》里那一段：1 秒整 20 个音节。NahDah 2023 文档按官方歌词列出的音节是"a-noa-qui-dá-fa-lha-mui-to-ma-noa-qui-da-fa-lha-ma-to-ma-no-que-da"。这一段先后被四家测过：
