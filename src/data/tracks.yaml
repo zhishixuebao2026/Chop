@@ -14,3 +14,401 @@
   note: 九位参与者、三种语言（英语、丹麦语、土耳其语）的跨国 chopper 合作。出场顺序是 Ceza（土耳其）、Tech N9ne、JL B.Hood（都在堪萨斯城）、U$O（丹麦）、Yelawolf（亚拉巴马）、Twista（芝加哥）、Busta Rhymes（纽约）、D-Loc（堪萨斯城）、Twisted Insane（加州）；歌词署名和网易云热评两处对得上，热评还说每段前面都有一句女声报所在地。
   sources:
     - { title: 'Wikipedia – Worldwide Choppers', url: 'https://en.wikipedia.org/wiki/Worldwide_Choppers' }
+- id: speedom
+  title: Speedom (WWC2)
+  artists: [tech-n9ne, eminem]
+  credit: Tech N9ne ft. Eminem & Krizz Kaliko
+  year: 2015
+  album: Special Effects
+  youtube: _FBwVRNOL70
+  bilibili: BV1wt411P79m
+  netease: 31517325
+  youtubeChannel: Strange Music Inc
+  officialUpload: true
+  scene: world
+  note: Worldwide Choppers 的续作，Tech N9ne 与 Eminem 的正面交锋。
+  sources:
+    - { title: 'Strange Music – Speedom 官宣', url: 'https://www.strangemusicinc.com/2015/04/tech-n9ne/breaking-tech-n9ne-confirms-speedom-wwc2-feat-krizz-kaliko-and-eminem' }
+    - { title: 'Wikipedia – Special Effects', url: 'https://en.wikipedia.org/wiki/Special_Effects_(album)' }
+- id: rap-god
+  title: Rap God
+  artists: [eminem]
+  credit: Eminem
+  year: 2013
+  album: The Marshall Mathers LP 2
+  youtube: XbGs_qK2PQA
+  bilibili: BV1954y1y7ut
+  netease: 27853227
+  youtubeChannel: EminemMusic
+  officialUpload: true
+  scene: world
+  note: 吉尼斯"单曲单词数最多"：6 分 03 秒 1,560 个单词。
+  sources:
+    - { title: 'Wikipedia – Rap God', url: 'https://en.wikipedia.org/wiki/Rap_God' }
+- id: godzilla
+  title: Godzilla
+  artists: [eminem]
+  credit: Eminem ft. Juice WRLD
+  year: 2020
+  album: Music to Be Murdered By
+  youtube: r_0JjYUe5jo
+  bilibili: BV1ME411M7Ch
+  netease: 1417093533
+  youtubeChannel: Lyrical Lemonade
+  officialUpload: true
+  scene: world
+  note: 第三段主歌 31 秒 224 个单词，约 10.65 音节/秒，Eminem 个人最快。
+  sources:
+    - { title: 'Wikipedia – Godzilla (Eminem song)', url: 'https://en.wikipedia.org/wiki/Godzilla_(Eminem_song)' }
+- id: look-at-me-now
+  title: Look at Me Now
+  artists: [busta-rhymes]
+  credit: Chris Brown ft. Lil Wayne & Busta Rhymes
+  year: 2011
+  album: F.A.M.E.
+  youtube: 8gyLR4NfMiI
+  bilibili: BV1yx411k7C4
+  youtubeChannel: Chris Brown
+  officialUpload: true
+  scene: world
+  note: Chris Brown 的单曲，Billboard Hot 100 最高第 6，拿了两项格莱美提名。Busta Rhymes 的段落在最后，XXL 和 Vibe 都把它算作他最出彩的客串之一。
+  sources:
+    - { title: 'Wikipedia – Look at Me Now', url: 'https://en.wikipedia.org/wiki/Look_at_Me_Now_(Chris_Brown_song)' }
+- id: gimme-some-more
+  title: Gimme Some More
+  artists: [busta-rhymes]
+  credit: Busta Rhymes
+  year: 1998
+  album: 'E.L.E. (Extinction Level Event): The Final World Front'
+  youtube: un3NkWnHl9Q
+  bilibili: BV1bALDz7Ema
+  netease: 26661548
+  youtubeChannel: Busta Rhymes
+  officialUpload: true
+  scene: world
+  note: 弦乐采样自电影《惊魂记》（Psycho）配乐。
+  sources:
+    - { title: 'Wikipedia – Gimme Some More', url: 'https://en.wikipedia.org/wiki/Gimme_Some_More' }
+- id: break-ya-neck
+  title: Break Ya Neck
+  artists: [busta-rhymes]
+  credit: Busta Rhymes
+  year: 2001
+  album: Genesis
+  youtube: W7FfCJb8JZQ
+  bilibili: BV1UJ411V7Xj
+  netease: 16642169
+  youtubeChannel: Busta Rhymes
+  officialUpload: true
+  scene: world
+  note: 插值了 Red Hot Chili Peppers 的 "Give It Away"。
+  sources:
+    - { title: 'Wikipedia – Break Ya Neck', url: 'https://en.wikipedia.org/wiki/Break_Ya_Neck' }
+- id: 60-second-assassins
+  title: 60 Second Assassins
+  artists: [busta-rhymes, twista, bone-thugs-n-harmony]
+  credit: DJ Kay Slay ft. Busta Rhymes, Layzie Bone, Twista & Jaz-O
+  year: 2010
+  album: Rhyme or Die
+  youtube: eCP34Jiq6L0
+  bilibili: BV18f4y137zd
+  netease: 1340094006
+  youtubeChannel: MixedByX
+  officialUpload: false
+  scene: world
+  note: '纽约 DJ Kay Slay 召集的快嘴合作，Araabmuzik 制作，2010 年 11 月放出，MV 2012 年才发。Stereogum 的说法是，他找了四个"唱得极快"的人，让他们尽可能往快里唱。Layzie Bone 是 Bone Thugs-n-Harmony 的成员；Jaz-O 是 Jay-Z 出道前的师傅，1990 年前后就在纽约唱快嘴。'
+  sources:
+    - { title: 'Fake Shore Drive – DJ Kay Slay feat. Twista, Layzie Bone, Busta Rhymes & Jaz-O「60 Second Assassins」（2010-11-30）', url: 'https://www.fakeshoredrive.com/2010/11/dj-kay-slay-feat-twista-layzie-bone-busta-rhymes-jaz-o-60-second-assassins.html/' }
+    - { title: 'Stereogum – DJ Kay Slay「60 Second Assassins」MV（2012-01-17）', url: 'https://stereogum.com/926412/dj-kay-slay-60-second-assassins-video-feat-busta-rhymes-layzie-bone-twista-jaz-o/news' }
+- id: calm-down
+  title: Calm Down
+  artists: [busta-rhymes, eminem]
+  credit: Busta Rhymes ft. Eminem
+  year: 2014
+  album: 'Extinction Level Event 2: The Wrath of God'
+  youtube: 2Y5J3VUC9qM
+  netease: 28747057
+  youtubeChannel: Busta Rhymes
+  officialUpload: true
+  scene: world
+  note: 'Scoop DeVille 制作，2014 年 7 月作为单曲发行，全长近 6 分钟，后来收进 2020 年的专辑。Busta 说这首一开始只是高能量的说唱歌，Eminem 先回了 42 小节，两人越唱越长，最后各唱了两分半左右。'
+  sources:
+    - { title: 'Wikipedia – Calm Down (Busta Rhymes song)', url: 'https://en.wikipedia.org/wiki/Calm_Down_(Busta_Rhymes_song)' }
+- id: tha-crossroads
+  title: Tha Crossroads
+  artists: [bone-thugs-n-harmony]
+  credit: Bone Thugs-n-Harmony
+  year: 1996
+  album: E. 1999 Eternal
+  youtube: VMYAEHE2GrM
+  bilibili: BV1x5411w7LX
+  netease: 26673306
+  youtubeChannel: Bone Thugs-N-Harmony
+  officialUpload: true
+  scene: world
+  note: 连续 8 周 Billboard Hot 100 冠军，1997 年格莱美获奖。专辑原版发行于 1995 年。
+  sources:
+    - { title: 'Wikipedia – Bone Thugs-n-Harmony', url: 'https://en.wikipedia.org/wiki/Bone_Thugs-n-Harmony' }
+- id: slow-jamz
+  title: Slow Jamz
+  artists: [twista]
+  credit: Twista ft. Kanye West & Jamie Foxx
+  year: 2003
+  album: Kamikaze
+  youtube: jI-w4gvkCkQ
+  bilibili: BV1124y1U768
+  netease: 18969141
+  youtubeChannel: TWISTA
+  officialUpload: true
+  scene: world
+  note: 快嘴也能拿冠军单曲：Twista 的主流代表作。2003 年 11 月作为单曲发行，2004 年 2 月登上 Billboard Hot 100 第一，同年收进专辑《Kamikaze》。
+  sources:
+    - { title: 'Wikipedia – Twista', url: 'https://en.wikipedia.org/wiki/Twista' }
+    - { title: 'Wikipedia – Slow Jamz', url: 'https://en.wikipedia.org/wiki/Slow_Jamz' }
+- id: holocaust
+  title: Holocaust
+  artists: [ceza]
+  credit: Ceza
+  year: 2004
+  album: Rapstar
+  youtube: UiyxPIvB89Q
+  netease: 1202623
+  youtubeChannel: CEZA
+  officialUpload: true
+  scene: world
+  note: 专辑《Rapstar》里的歌，土耳其媒体介绍时常说它是土耳其最快的歌之一，歌词"几乎不可能背下来"。
+  sources:
+    - { title: 'Wikipedia – Ceza', url: 'https://en.wikipedia.org/wiki/Ceza' }
+    - { title: 'Last.fm – Holocaust', url: 'https://www.last.fm/music/Ceza/_/Holocaust' }
+- id: hero
+  title: 주인공 (Hero)
+  artists: [outsider]
+  credit: Outsider feat. LMNOP
+  year: 2010
+  album: 주인공
+  youtube: xLl8fKxKiho
+  bilibili: BV1r54y197o4
+  netease: 22841582
+  youtubeChannel: Josie1007
+  officialUpload: false
+  scene: world
+  note: Outsider 最快的正式歌曲：NahDah 2023 榜测得 1.070 秒 16 个音节，约 14.95 SPS。
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'Wikipedia – Outsider (rapper)（第三张专辑 Hero，2010）', url: 'https://en.wikipedia.org/wiki/Outsider_(rapper)' }
+- id: star-warz
+  title: Star Warz (별들의 전쟁)
+  artists: [outsider, twista]
+  credit: Outsider & Twista
+  year: 2015
+  youtube: 3TJrTSgRBqk
+  bilibili: BV1yx411g7on
+  netease: 30148183
+  youtubeChannel: Lovetoken
+  officialUpload: false
+  scene: world
+  note: 韩国快嘴和美国 chopper 的对射，两人轮流上高速段落。
+  sources:
+    - { title: 'xportsnews – 아웃사이더, 美래퍼 트위스타와 세기의 속사포 랩 배틀（2015）', url: 'https://www.xportsnews.com/article/540238' }
+- id: jian-jiang
+  title: 健将
+  artists: [pharaoh]
+  credit: 法老 / 小精灵
+  year: 2022
+  album: 健将mixtape
+  youtube: xdzGifKhW6U
+  bilibili: BV1Ad4y1q7QR
+  netease: 1988565273
+  youtubeChannel: Bagel Music
+  officialUpload: false
+  scene: china
+  note: 2022 年 10 月 11 日发行，正好是法老的生日。有第三方测算称其中一段 5 秒快嘴约 10 字/秒。
+  sources:
+    - { title: '网易云音乐 – 健将', url: 'https://music.163.com/song?id=1988565273' }
+    - { title: '百度百科 – 健将mixtape', url: 'https://baike.baidu.com/item/%E5%81%A5%E5%B0%86mixtape/62070166' }
+- id: mao-wang
+  title: 猫王
+  artists: [kindergarten-killer]
+  credit: 幼稚园杀手
+  youtube: K7cg85ZOOEo
+  bilibili: BV124411w7tv
+  youtubeChannel: 驁三春
+  officialUpload: false
+  scene: china
+  year: 2008
+  note: '常被列为幼稚园杀手最快的歌之一。知乎专栏《幼稚园杀手：论diss，在座各位都是垃圾》称它是 2008 年的作品，歌里 diss 了茶米；已知最早的公开上传是 2017 年的歌词视频。'
+  confidence: pending
+  sources:
+    - { title: '百度百科 – 幼稚园杀手', url: 'https://baike.baidu.com/item/%E5%B9%BC%E7%A8%9A%E5%9B%AD%E6%9D%80%E6%89%8B/1475883' }
+    - { title: '知乎 – 幼稚园杀手：论diss，在座各位都是垃圾', url: 'https://zhuanlan.zhihu.com/p/36553979' }
+- id: speed-no1
+  title: 'Speed #1'
+  artists: [guang-guang]
+  credit: 光光（D-Evil）
+  scene: china
+  year: 2008
+  album: 王者之路（D-Evil）
+  youtube: IVms7d51BX8
+  netease: 28302050
+  bilibili: BV1LJ411H7NX
+  youtubeChannel: good music
+  officialUpload: false
+  note: '中文说唱早期的快嘴标杆。网易云收在 D-Evil 的专辑《王者之路》（2008）里，曲名写作 speed；2020 年的回顾文章也说它是"十二年前"的歌。网友测算第二段主歌约 8.27 字/秒，但没有说明方法。'
+  confidence: pending
+  sources:
+    - { title: '新浪 – MC光光/南京 D-Evil 十二年前的《Speed No1》', url: 'https://k.sina.cn/article_1163858357_m455f11b503300mplv.html' }
+    - { title: '网易 – 谁才是中文说唱圈第一快嘴？（2018）', url: 'https://www.163.com/dy/article/E22BSRNQ0512S3SL.html' }
+    - { title: '网易云音乐 – D-Evil《王者之路》（2008）：speed', url: 'https://music.163.com/#/song?id=28302050' }
+- id: walking-dead-2018-cypher
+  title: 活死人 2018 Cypher
+  artists: [yang-he-su, pharaoh, lil-andy]
+  credit: 杨和苏 KeyNG、法老、Buzzy、Lil Andy 等
+  scene: china
+  year: 2018
+  youtube: 5w3uqpZWpfc
+  bilibili: BV1mW411f7F9
+  netease: 1303079913
+  youtubeChannel: ZHONG.TV
+  officialUpload: false
+  note: 活死人全员 cypher，小安迪的快嘴段落常被拿出来讨论。五里亭亭长把它排在"小安迪最快的五首歌"第 2：15 字 / 1.2 秒 ≈ 12.5 字/秒。
+  sources:
+    - { title: '网易 – 谁才是中文说唱圈第一快嘴？（2018）', url: 'https://www.163.com/dy/article/E22BSRNQ0512S3SL.html' }
+- id: erzi-wawa
+  title: 儿子娃娃
+  artists: [nawukere]
+  credit: 那吾克热
+  starter: true
+  scene: china
+  year: 2018
+  youtube: Bg2Ri8omcSY
+  bilibili: BV1At411B7NN
+  netease: 1331230522
+  youtubeChannel: UN S
+  officialUpload: false
+  note: 《中国新说唱》2018 第一个"3 Pass"，高速段落被形容为"机枪快嘴"。
+  sources:
+    - { title: '维基百科 – 那吾克热·玉素甫江', url: 'https://zh.wikipedia.org/zh-cn/%E9%82%A3%E5%90%BE%E5%85%8B%E7%83%AD%C2%B7%E7%8E%89%E7%B4%A0%E7%94%AB%E6%B1%9F' }
+    - { title: '网易 – 谁才是中文说唱圈第一快嘴？（2018）', url: 'https://www.163.com/dy/article/E22BSRNQ0512S3SL.html' }
+- id: yayun-ge
+  title: 押韵歌
+  artists: [ar-liu-fuyang]
+  credit: AR刘夫阳
+  scene: china
+  year: 2019
+  youtube: OWv9qodxUrY
+  bilibili: BV17i4y1g7QQ
+  netease: 1319854361
+  youtubeChannel: Music9453 鬆音樂
+  officialUpload: false
+  note: 顾名思义，一首押韵技巧的展示。
+  sources:
+    - { title: '网易 – 谁才是中文说唱圈第一快嘴？（2018）', url: 'https://www.163.com/dy/article/E22BSRNQ0512S3SL.html' }
+    - { title: '网易云音乐 – AR刘夫阳《校园寓言故事》（2019）：押韵歌', url: 'https://music.163.com/#/song?id=1319854361' }
+- id: tru-master
+  title: Tru Master (Remix)
+  artists: [bei-bei]
+  credit: 贝贝 feat. 马思唯
+  scene: china
+  year: 2015
+  youtube: I8LmgyLfjDE
+  bilibili: BV1Lw411E7WJ
+  youtubeChannel: HHH FOREVER Fans Channel
+  officialUpload: false
+  note: 西安红花会与成都说唱会馆的合作。
+  sources:
+    - { title: '豆瓣 HMC – Tru Master (Remix)', url: 'https://site.douban.com/Hip-HopMusicClub/widget/notes/18634931/note/526533723/' }
+- id: taotie
+  title: 饕餮
+  artists: [zhao-chenlong]
+  credit: 南征北战（快嘴段落由赵辰龙演唱）
+  scene: china
+  starter: true
+  year: 2016
+  youtube: 9ExsVjLenjs
+  bilibili: BV1Ns411e7KG
+  netease: 445702397
+  youtubeChannel: William Wang
+  officialUpload: false
+  note: 电影《长城》推广曲。快嘴段一共 128 个字，赵辰龙在山东卫视《超强音浪》上现场 10 秒唱完，约 12.8 字/秒；五里亭亭长测现场版最快一段是 2.58 秒 34 字，约 13.2 字/秒。宣传里的"332 BPM"是节拍，不是语速。
+  sources:
+    - { title: '万达 – 南征北战献唱《长城》推广曲', url: 'https://www.wanda.cn/2016/2016latest_1209/34181.html' }
+    - { title: '百度百科 – 饕餮（南征北战）', url: 'https://baike.baidu.com/item/%E9%A5%95%E9%A4%AE/20269071' }
+    - { title: 'B站 – 山东卫视《超强音浪》南征北战醉人（赵辰龙）10 秒 128 字《饕餮》快嘴', url: 'https://www.bilibili.com/video/BV1vW411r7nh/' }
+    - { title: 'B站 – 五里亭亭长：语速最快的七位中文rapper（2021，《饕餮》现场版 34 字 / 2.58 秒）', url: 'https://www.bilibili.com/video/BV1rN411X75u/' }
+- id: upuan
+  title: Upuan
+  artists: [gloc-9]
+  credit: Gloc-9 feat. Jeazell Grutas
+  scene: world
+  year: 2009
+  youtube: yvWVfYwpMD0
+  bilibili: BV1AJ411H7o6
+  netease: 1302063965
+  youtubeChannel: Gloc -9
+  officialUpload: true
+  note: 'Gloc-9 最有名的作品之一，2009 年 6 月作为专辑《Matrikula》的首支单曲发行，官方 MV 播放量近 8000 万。'
+  sources:
+    - { title: 'Wikipedia – Gloc-9', url: 'https://en.wikipedia.org/wiki/Gloc-9' }
+    - { title: 'Wikipedia – Upuan（2009 年 6 月 22 日发行）', url: 'https://en.wikipedia.org/wiki/Upuan' }
+- id: infinite-choppers
+  title: Infinite Choppers
+  artists: [down6, kal-paseo, crucified, the-jackal, splxt]
+  credit: DOWN6 ft. Crucified, SPLXT, AceThaGoblin, Kal Paseo, LEECHY! 等 18 人
+  scene: world
+  year: 2023
+  youtube: EBLVVhPbv3Y
+  bilibili: BV1Tp4y1L7yy
+  netease: 2068386494
+  youtubeChannel: DOWN6
+  officialUpload: true
+  note: 'SPS 社区最有代表性的 chopper cypher 之一，2023 年 7 月首发，全长约 18 分钟，网易云署名 18 位参与者，SPS wiki 上有逐人的测算表。'
+  sources:
+    - { title: 'SPS and Chopper Rap Wiki – Infinite choppers 1', url: 'https://sps-and-chopper-rap.fandom.com/wiki/Infinite_choppers_1' }
+- id: uno
+  title: Uno
+  artists: [don-xperto]
+  credit: Don Xperto
+  scene: world
+  year: 2008
+  youtube: 1WFS34VWsYY
+  youtubeChannel: Don Xperto
+  officialUpload: true
+  note: '他自称"世界上最快的歌"的成名作：简介说 2007 年录好，2008 年 10 月上传，靠它上了墨西哥的电视节目。按后来的标准，它的速度并不突出。NahDah 2017 版把他排在第 5，速度来自另一首《Rapido》（约 24.1）；后来因为他的歌长期加速，把他永久除名。'
+  confidence: disputed
+  sources:
+    - { title: 'SoundCloud – donxperto（本人简介）', url: 'https://soundcloud.com/donxperto' }
+    - { title: 'NahDah Vebb – 2023 榜除名说明（Don Xperto 一节）', url: 'https://docs.google.com/document/d/1DfcPmT5YCWYwDRP-uyFMEthi9n7ctGRsK2C3QxiFJrA' }
+- id: power-up
+  title: Power Up
+  artists: [crucified]
+  credit: Crucified
+  scene: world
+  year: 2017
+  album: Water to Wine
+  youtube: y0J3LJBohWQ
+  netease: 515455558
+  youtubeChannel: crucified830
+  officialUpload: true
+  note: 曾被误算成 28.9 SPS 并广泛流传；更正值 SPS wiki 说 18、Rap Wiki 说 19。Rap Wiki 认为这首真正的看点是一分钟九百多个音节的持续速度。
+  confidence: disputed
+  sources:
+    - { title: 'SPS and Chopper Rap Wiki – Crucified', url: 'https://sps-and-chopper-rap.fandom.com/wiki/Crucified' }
+- id: that-music
+  title: That Music
+  artists: [crucified]
+  credit: Crucified ft. Playa Rob
+  scene: world
+  year: 2012
+  album: Sing to the Morning Light
+  youtube: iFrZqDMb884
+  bilibili: BV1wx411J7i6
+  netease: 1391433717
+  youtubeChannel: crucified830
+  officialUpload: true
+  note: Crucified 播放量最高的歌，据 wiki 记载到 2026 年约 270 万播放。
+  sources:
+    - { title: 'SPS and Chopper Rap Wiki – Crucified', url: 'https://sps-and-chopper-rap.fandom.com/wiki/Crucified' }
+- id: still-we-breathe
+  title: Still We Breathe
+  artists: [crucified, bone-thugs-n-harmony]
+  credit: Crucified ft. Bizzy Bone（Bone Thugs-n-Harmony）
