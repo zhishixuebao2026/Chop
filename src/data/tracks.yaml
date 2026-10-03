@@ -412,3 +412,1019 @@
   title: Still We Breathe
   artists: [crucified, bone-thugs-n-harmony]
   credit: Crucified ft. Bizzy Bone（Bone Thugs-n-Harmony）
+  scene: world
+  year: 2011
+  album: The Birth of Tragedy
+  youtube: aRJ7NY_-UBw
+  netease: 1391430750
+  youtubeChannel: crucified830
+  officialUpload: true
+  note: '2011 年 5 月先在他的 YouTube 频道发布，2012 年 11 月收进专辑《The Birth of Tragedy》。地下 chopper 和 chopper 先驱 Bone Thugs-n-Harmony 成员的合作。'
+  sources:
+    - { title: 'Rap Wiki – Crucified', url: 'https://rap.fandom.com/wiki/Crucified' }
+    - { title: 'YouTube – Crucified 本人频道（2011 年 5 月 17 日上传）', url: 'https://www.youtube.com/watch?v=aRJ7NY_-UBw' }
+    - { title: 'Discogs – Crucified – The Birth of Tragedy（2012）', url: 'https://www.discogs.com/master/1211457-Crucified-The-Birth-of-Tragedy' }
+- id: wicked
+  title: Wicked
+  artists: [crucified, twisted-insane]
+  credit: Crucified ft. Twisted Insane
+  scene: world
+  year: 2011
+  album: The Birth of Tragedy
+  youtube: SoHpqUvSGQE
+  netease: 1391430748
+  youtubeChannel: crucified830
+  officialUpload: true
+  note: '2011 年 5 月先在他的 YouTube 频道发布，2012 年 11 月收进专辑《The Birth of Tragedy》。Twisted Insane 还出现在 Crucified 的另外两首歌里。'
+  sources:
+    - { title: 'Rap Wiki – Crucified', url: 'https://rap.fandom.com/wiki/Crucified' }
+    - { title: 'YouTube – Crucified 本人频道（2011 年 5 月 17 日上传）', url: 'https://www.youtube.com/watch?v=SoHpqUvSGQE' }
+    - { title: 'Discogs – Crucified – The Birth of Tragedy（2012）', url: 'https://www.discogs.com/master/1211457-Crucified-The-Birth-of-Tragedy' }
+- id: live-799
+  title: 799 syllables in 46 seconds（现场）
+  artists: [crucified]
+  credit: Crucified
+  scene: world
+  year: 2014
+  youtube: UazJea9uaDc
+  youtubeChannel: crucified830
+  officialUpload: true
+  note: 为回应"后期加速"的质疑而录的现场视频：46 秒 799 个音节，平均约 17.37。
+  sources:
+    - { title: 'Rap Wiki – Crucified', url: 'https://rap.fandom.com/wiki/Crucified' }
+- id: new-rap-language
+  title: The New Rap Language
+  credit: Spoonie Gee & The Treacherous Three
+  year: 1980
+  youtube: JlTvgyUBTRs
+  netease: 26755887
+  youtubeChannel: HipHopKlaZZiX
+  officialUpload: false
+  scene: world
+  note: 维基百科 Chopper 词条说，这是第一首把高速说唱录成唱片的歌，Kool Moe Dee 在歌里被称为快嘴的"创始人"。
+  sources:
+    - { title: 'Wikipedia – Chopper (rap)', url: 'https://en.wikipedia.org/wiki/Chopper_(rap)' }
+- id: midwest-choppers
+  title: Midwest Choppers
+  artists: [tech-n9ne]
+  credit: Tech N9ne feat. D-Loc, Dalima & Krizz Kaliko
+  year: 2007
+  album: Misery Loves Kompany
+  youtube: 0LKFW3AdGCA
+  netease: 3765466
+  youtubeChannel: Strange Music Inc
+  officialUpload: true
+  scene: world
+  note: Tech N9ne 的 chopper 系列第一首。维基百科说，"chopper"这个叫法正是因为这个系列才流行起来。
+  sources:
+    - { title: 'Wikipedia – Chopper (rap)', url: 'https://en.wikipedia.org/wiki/Chopper_(rap)' }
+- id: midwest-choppers-2
+  title: Midwest Choppers 2
+  artists: [tech-n9ne]
+  credit: Tech N9ne feat. K-Dean & Krayzie Bone
+  year: 2009
+  album: Sickology 101
+  youtube: FVa4X29vGNY
+  netease: 19449918
+  youtubeChannel: Strange Music Inc
+  officialUpload: true
+  scene: world
+  note: 系列第二首，请来了 Bone Thugs-n-Harmony 的 Krayzie Bone。之后才是 2011 年的 Worldwide Choppers。
+  sources:
+    - { title: 'Wikipedia – Chopper (rap)', url: 'https://en.wikipedia.org/wiki/Chopper_(rap)' }
+- id: german-choppers
+  title: German Choppers
+  artists: [dcvdns]
+  credit: DCVDNS feat. Tamas
+  youtube: Z-E2yzcpP3k
+  netease: 27767133
+  youtubeChannel: DCVDNS
+  officialUpload: true
+  scene: world
+  year: 2013
+  note: 德语 chopper 的代表曲目，维基百科举它说明 Tech N9ne 的"Choppers"命名方式传到了别的国家。
+  sources:
+    - { title: 'Wikipedia – Chopper (rap)', url: 'https://en.wikipedia.org/wiki/Chopper_(rap)' }
+    - { title: '网易云音乐 – DCVDNS《D.W.I.S (Premium Edition)》（2013）', url: 'https://music.163.com/#/song?id=27767133' }
+- id: thron
+  title: Thron
+  artists: [twisted-insane]
+  credit: ShimmyMC feat. Twisted Insane & Wrekonize
+  youtube: oi7uBcKKDxg
+  youtubeChannel: ShimmyMC
+  officialUpload: true
+  scene: world
+  year: 2017
+  note: 德国 chopper ShimmyMC 请来美国的 Twisted Insane 和 Wrekonize，维基百科 Chopper 词条点名的跨国合作。
+  sources:
+    - { title: 'Wikipedia – Chopper (rap)', url: 'https://en.wikipedia.org/wiki/Chopper_(rap)' }
+- id: dome-split
+  title: Dome Split
+  artists: [twisted-insane]
+  credit: Twisted Insane
+  youtube: nUpVSFRUfO0
+  youtubeChannel: TwistedInsaneVEVO
+  officialUpload: true
+  scene: world
+  note: 'Twisted Insane 最快的歌：NahDah 2023 版 1.050 秒 16 个音节 ≈ 15.24（第 32 名），2021 版 1.032 秒 16 个音节 ≈ 15.50。发行年份不详：最早的上传在 2011 年 4 月，上传者说是他早年 mixtape 里的歌，但说不清是哪一张。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'B站 – NahDah Vebb：Top 150 Fastest Rappers 2021（转载，每条都有算式）', url: 'https://www.bilibili.com/video/BV1Av4y1Z7d7/' }
+    - { title: 'YouTube – DruDDown5150：Twisted insane-Dome Split（2011 年 4 月上传，"Old shit"）', url: 'https://www.youtube.com/watch?v=j2P6kajmMsU' }
+- id: idol
+  title: Idol
+  artists: [tech-n9ne]
+  credit: Hollywood Undead feat. Tech N9ne
+  youtube: v5gLMpiDv28
+  bilibili: BV1rgrRBbEf7
+  netease: 1465030798
+  youtubeChannel: Hollywood Undead
+  officialUpload: true
+  scene: world
+  year: 2020
+  note: 'NahDah 2023 榜里 Tech N9ne 最快的一段：1.067 秒 15 个音节，约 14.06 SPS，第 101 名。另一位测算者 zombifiedangel 测同一段是 14.85。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+- id: hold-up
+  title: Hold Up
+  artists: [twista]
+  credit: Diamond D feat. Twista, A-F-R-O & Dillon
+  youtube: 8dSA6xcICNk
+  netease: 1362129795
+  youtubeChannel: DiamondDDITCVEVO
+  officialUpload: true
+  scene: world
+  year: 2019
+  note: 'NahDah 2023 榜里 Twista 最快的一段：1.091 秒 15 个音节，约 13.75 SPS，第 137 名。这一段目前只有 NahDah 一家测算。'
+  confidence: pending
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+- id: onion-chopper
+  title: Onion Chopper
+  artists: [ruffian-rugged, dumanoid, crucified, twisted-insane, sabotahe]
+  credit: Ruffian Rugged & Dumanoid feat. Twisted Insane, Kurşun, Sabotahe, Crucified & Fate
+  youtube: 8T-HVOvWbqQ
+  netease: 2017089392
+  youtubeChannel: Ruffian Rugged
+  officialUpload: true
+  scene: world
+  year: 2023
+  note: NahDah 2023 榜第 1 名来自这首里 Crucified 的段落：1.043 秒 22 个音节，约 21.09 SPS。他本人说是 22 SPS，NahDah 团队"非常接近但没能核实"。
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'NahDah Vebb – 测速方法 FAQ（Onion Chopper 一节）', url: 'https://docs.google.com/document/d/1zPWDPfnmmfRIuuskCmTMeTlWTjY9uc9NQ2nM3MU-mCU' }
+- id: mocca
+  title: Mocca
+  artists: [ruffian-rugged]
+  credit: Ruffian Rugged (Prod. by Fireclath)
+  youtube: anDMZHlq8TQ
+  youtubeChannel: Def Ill aka Ruffian Rugged
+  officialUpload: true
+  scene: world
+  year: 2022
+  confidence: disputed
+  note: 'Ruffian Rugged 最快的一段：1.059 秒 22 个音节 ≈ 20.77，NahDah 2023 版第 4 名。但那一秒几乎是"macchiato"一个词重复六遍，SPS wiki 因此不算这段。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'SPS and Chopper Rap Wiki – Def ill (Aka Ruffian rugged)', url: 'https://sps-and-chopper-rap.fandom.com/wiki/Def_ill_(Aka_Ruffian_rugged)' }
+- id: tha-shade
+  title: Tha Shade
+  artists: [idylll, kal-paseo]
+  credit: Idylll x Kal Paseo
+  youtube: _v6-zQ2FKS0
+  youtubeChannel: Idylll
+  officialUpload: true
+  scene: world
+  year: 2022
+  note: 'Idylll 和 Kal Paseo 自写自产的合作。Idylll 那段 1 秒整 21 个音节，NahDah 2023 版第 3 名；SPS wiki 测是 20.51。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'SPS and Chopper Rap Wiki – IDYLLL', url: 'https://sps-and-chopper-rap.fandom.com/wiki/IDYLLL' }
+- id: infinite-choppers-2
+  title: Infinite Choppers 2
+  artists: [down6, idylll, asa-jake, ruffian-rugged, dumanoid, kal-paseo, troll, faraway]
+  credit: DOWN6 feat. Hurracane, Idylll, Asa Jake, Al Zabran, Tokumei, Troll, Dumanoid & Ruffian Rugged, Bloody Ruckus, dvagoh, Kal Paseo 等
+  youtube: n2SmW1OREcA
+  youtubeChannel: DOWN6
+  officialUpload: true
+  scene: world
+  year: 2024
+  note: 'DOWN6 牵头、做了九到十个月的 chopper cypher。Idylll 那段在 SPS 圈测到 22 以上（画面写 23.41，后来重算为 22.40，SPS wiki 最终写 22.73）；Dumanoid 和 Ruffian Rugged 合唱一段，Ruffian 那部分 SPS wiki 测为 20.11。'
+  sources:
+    - { title: 'YouTube – DOWN6 - INFINITE CHOPPERS 2（2024-06-19）', url: 'https://www.youtube.com/watch?v=n2SmW1OREcA' }
+    - { title: 'SPS and Chopper Rap Wiki – IDYLLL', url: 'https://sps-and-chopper-rap.fandom.com/wiki/IDYLLL' }
+- id: freezetyler
+  title: FreeZeTyler
+  artists: [shad]
+  credit: Shad
+  youtube: Q6c32Z-Pbq4
+  youtubeChannel: blaqsea（重传）
+  officialUpload: false
+  scene: world
+  note: 'Shad 最快的一段：TrollatorBR、BruCalcs、NahDah 2021 和 2023 版都算作 1 秒 20 个音节，五里亭亭长 2021、2022 年逐音节慢放只测到 17 左右。原视频所在的 Saving Tracks 频道已转为私享，这里是 2026 年的重传；发行年份不详，最晚在 2020 年 6 月以前。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'YouTube – TrollatorBR：Shad - FreeZeTyler (Cálculo)（2020）', url: 'https://www.youtube.com/watch?v=dguRJ4Ir8tA' }
+    - { title: 'B站 – 五里亭亭长：2022世界语速排行榜（2022-05-01）', url: 'https://www.bilibili.com/video/BV1ZY4y1k7a1/' }
+- id: united-choppers-4
+  title: United Choppers 4
+  artists: [j-battle, down6, leach]
+  credit: J Battle ft. LFiers, Leach, Coutz, Eclip$e, DOWN6, Luck Da Gynx, Almighty, New Blood
+  youtube: bH2omrq8iew
+  youtubeChannel: J Battle Vidz
+  officialUpload: true
+  scene: world
+  year: 2022
+  note: 'J Battle 召集的 chopper cypher，参与者来自美国、加拿大、奥地利、澳大利亚。压轴的 DOWN6 那段 1 秒整 20 个音节，NahDah 2023 版第 7 名。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+- id: landfill
+  title: LANDFILL
+  artists: [down6]
+  credit: DOWN6（prod. 919slum）
+  album: Burial
+  youtube: Zz9A3-0WHls
+  youtubeChannel: DOWN6
+  officialUpload: true
+  scene: world
+  year: 2025
+  confidence: pending
+  note: 'SPS wiki 记为 DOWN6 最快的一段：1.065 秒 23 个音节 ≈ 21.60。评论区有人说"没见过谁能把这种速度保持这么久"。'
+  sources:
+    - { title: 'SPS and Chopper Rap Wiki – DOWN6', url: 'https://sps-and-chopper-rap.fandom.com/wiki/DOWN6' }
+- id: sumaladumala
+  title: Sumaladumala
+  artists: [ruffian-rugged, dumanoid, kal-paseo, the-jackal]
+  credit: Ruffian Rugged ft. The Jackal, Dumanoid & Kal Paseo
+  youtube: CSXxzJvQLEM
+  youtubeChannel: Def Ill aka Ruffian Rugged
+  officialUpload: true
+  scene: world
+  year: 2024
+  note: '化用了 JJ Fad 的老歌《Supersonic》里那句"A sama lama lama……"（Eminem 在《Rap God》里也用过）。Dumanoid 那段测到 22 ÷ 1.008 ≈ 21.83，但他本人觉得偷懒了，不算数。'
+  sources:
+    - { title: 'SPS and Chopper Rap Wiki – Dumanoid', url: 'https://sps-and-chopper-rap.fandom.com/wiki/Dumanoid' }
+    - { title: 'YouTube – Ruffian Rugged - SUMALADUMALA（2024-04-11）', url: 'https://www.youtube.com/watch?v=CSXxzJvQLEM' }
+- id: aym
+  title: AYM
+  artists: [sri-rascol]
+  credit: ADK x Sri Rascol
+  youtube: y0lsTWi7wC0
+  youtubeChannel: Rap Machines
+  officialUpload: true
+  scene: world
+  year: 2016
+  confidence: pending
+  note: '马来西亚泰米尔语说唱组合 Rap Machines 的 MV。Sri Rascol 的高速段落 1.023 秒 18 个音节 ≈ 17.60，NahDah 2023 版第 11 名；泰米尔语音节是按听感数的。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+- id: skrima-16-bars
+  title: 16 Bars Challenge
+  artists: [skrima]
+  credit: Skrima（Olympia Thugs Crew）
+  youtube: LZWht6glpKY
+  youtubeChannel: Olympia Thugs Crew
+  officialUpload: true
+  scene: world
+  year: 2015
+  confidence: pending
+  note: '菲律宾 2015 年前后流行的"16 小节挑战"。Skrima 这段 1.042 秒 18 个音节 ≈ 17.27，NahDah 2023 版第 12 名；他加禄语音节是按听感数的。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+- id: kill-5
+  title: Kill 5（Paslangin 5）
+  artists: [sabotahe]
+  credit: Aktibar x Sabotahe x Global Choppers
+  scene: world
+  year: 2020
+  youtube: A-5WcCb6PjU
+  bilibili: BV16f4y1p7ia
+  youtubeChannel: Aktibar Official
+  officialUpload: true
+  note: 'Aktibar 的 Kill 系列第五部，他加禄语叫 Paslangin。Sabotahe 这段是 NahDah 2023 榜第 2 名：1.047 秒 22 个音节 ≈ 21.01；TrollatorBR 单独测是 20.71。B 站链接是他本人发的这段 verse。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'YouTube – TrollatorBR："TOP 20" Sabotahe Fastest Verses (2026)', url: 'https://www.youtube.com/watch?v=iL9P__qKZOs' }
+- id: korona
+  title: Korona（加长版）
+  artists: [sabotahe, lucky-n9ne]
+  credit: Sparo ft. Lucky9, SaintBrown, Sabotahe, Respero 等
+  scene: world
+  year: 2016
+  album: Anak ng Rap
+  youtube: xHbVEC3zJnI
+  youtubeChannel: HoodlumRecordsOfficial
+  officialUpload: true
+  note: 'Sabotahe 的代表作之一，他那段是全曲最快的。NahDah 2017 版把这首列为他的代表作，但第 1 名的 27.4 算的是另一首《Kargado》。后来单独测这首：五里亭亭长 16.7，TrollatorBR 17.32。'
+  sources:
+    - { title: 'B站 – Fatality丶九头龙：世界最快速說唱歌手排行榜2017（NahDah 2017 版搬运）', url: 'https://www.bilibili.com/video/BV11x411L79b/' }
+    - { title: 'YouTube – TrollatorBR："TOP 20" Sabotahe Fastest Verses (2026)', url: 'https://www.youtube.com/watch?v=iL9P__qKZOs' }
+- id: mousha
+  title: 谋杀
+  artists: [kindergarten-killer]
+  credit: 幼稚园杀手
+  album: 蒲公英
+  youtube: SKhipQqpjOg
+  bilibili: BV14E411u7y6
+  netease: 183328
+  youtubeChannel: 楷傑
+  officialUpload: false
+  scene: china
+  year: 2010
+  note: '幼稚园杀手巅峰时期的快嘴代表作，收在 2010 年的专辑《蒲公英》里（那一年他连发了四张专辑）。B 站搬运版近 87 万播放，标题写着"语速极快，但完全可以听清"。'
+  sources:
+    - { title: 'B站 – 幼稚园杀手巅峰时期歌曲《谋杀》', url: 'https://www.bilibili.com/video/BV14E411u7y6/' }
+    - { title: 'B站 – 【韵脚检查】谋杀 - 幼稚园杀手', url: 'https://www.bilibili.com/video/BV1b93x6pEpR/' }
+    - { title: '网易云音乐 – 幼稚园杀手《蒲公英》（2010）：谋杀', url: 'https://music.163.com/#/song?id=183328' }
+- id: shengli
+  title: 胜利
+  artists: [kindergarten-killer]
+  credit: 幼稚园杀手 feat. 凤凰鸣
+  year: 2008
+  youtube: _dG2XMMZC9g
+  bilibili: BV1kx411E7KE
+  netease: 1920622872
+  youtubeChannel: 驁三春
+  officialUpload: false
+  scene: china
+  note: '和凤凰鸣的合作（2008）。两位 UP 主分别测过最快的一句：五里亭亭长 1.27 秒 21 个字 ≈ 16.5，石狐九和 1.16 秒 19 个字 ≈ 16.4，韵脚检查视频也数出 16–17 个字（吞字算法不同）。幼稚园杀手的人声变过调，这些数字不能当纪录看。'
+  sources:
+    - { title: 'StreetVoice – 胜利 Feat. 凤凰鸣（幼稚园杀手官方账号）', url: 'https://streetvoice.com/kindagartenkilla/songs/62788/' }
+    - { title: 'B站 – 【韵脚检查】幼杀局部语速最快的一首歌：胜利', url: 'https://www.bilibili.com/video/BV1EqZAYtEnJ/' }
+    - { title: 'B站 – 五里亭亭长：幼稚园杀手最快的五首歌（2021）', url: 'https://www.bilibili.com/video/BV1NK4y1n7X4/' }
+    - { title: 'B站 – 石狐九和：幼稚园杀手的快嘴究竟有多快（2021）', url: 'https://www.bilibili.com/video/BV1Zf4y1a73W/' }
+    - { title: 'B站 – 【中国说唱传奇】幼稚园杀手-胜利ft. 凤凰鸣2008', url: 'https://www.bilibili.com/video/BV1jN411Q7b5/' }
+- id: hbuf
+  title: H.B.U.F
+  artists: [bei-bei]
+  credit: DZ / 贝贝 / Cola
+  year: 2017
+  youtube: NNgd5M7vvqk
+  bilibili: BV1dx411s7RZ
+  youtubeChannel: 说唱食粮
+  officialUpload: false
+  scene: china
+  note: 南京和西安的合作。有韵脚检查视频称贝贝这段"平均一秒十二字"，也有人称这是贝贝"历史第二快"的快嘴。
+  sources:
+    - { title: 'B站 – 【韵脚检查】平均一秒十二字！《H.B.U.F》贝贝 part', url: 'https://www.bilibili.com/video/BV1j44y1s7Ui/' }
+    - { title: 'B站 – H.B.U.F 贝贝历史第二快嘴【韵脚检查】', url: 'https://www.bilibili.com/video/BV1S2ADesELP/' }
+    - { title: 'B站 – DZ/贝贝/COLA《H.B.U.F》（2017 年 9 月上传）', url: 'https://www.bilibili.com/video/BV1dx411s7RZ/' }
+- id: hnbmc-2018-cypher
+  title: HNBMC 2018 Cypher
+  artists: [bei-bei]
+  credit: 红花会（MAI、丁飞、DP、毕冉、啊之、贝贝、PG One、弹壳）
+  year: 2018
+  youtube: 2tQONu1Gi2Y
+  bilibili: BV13zypBcEQd
+  youtubeChannel: FirePanda
+  officialUpload: true
+  scene: china
+  note: 红花会全员 cypher，贝贝那段常被称为他"生涯最快的 verse"。
+  sources:
+    - { title: 'B站 – 【韵脚检查】红花会2018cypher 贝贝 part：贝贝生涯最快verse', url: 'https://www.bilibili.com/video/BV1L9LBzREF1/' }
+    - { title: '维基百科 – 弹壳Danko（2018 年随红花会发布 HNBMC 2018 CYPHER）', url: 'https://zh.wikipedia.org/zh-cn/%E5%BC%B9%E5%A3%B3Danko' }
+- id: sleep-read-love
+  title: Sleep, Read, Love
+  artists: [yang-he-su]
+  credit: 杨和苏 KeyNG
+  year: 2018
+  album: Sleep, Read, Love
+  youtube: jD6MDh49MIY
+  bilibili: BV1YW411o7HK
+  netease: 1293905047
+  youtubeChannel: 514 POP Music（《中国新说唱》2019 舞台版）
+  officialUpload: false
+  scene: china
+  note: 杨和苏早期的快嘴作品，2019 年他在《中国新说唱》复活赛上重唱，被称为"极致快嘴王者归来"。B 站链接是 2018 年原版。
+  sources:
+    - { title: 'B站 – 复活成功 杨和苏极致快嘴王者归来《Sleep Read Love》', url: 'https://www.bilibili.com/video/BV1Jc411376N/' }
+    - { title: '网易云音乐 – Sleep, Read, Love', url: 'https://music.163.com/#/song?id=1293905047' }
+- id: nightkidz
+  title: NIGHTKIDZ 夜之子
+  artists: [guang-guang]
+  credit: 侃迪 kandi / AA / Rapeter / MC光光
+  year: 2025
+  youtube: 1cOcmUPC5ec
+  bilibili: BV1u2e1zEEJk
+  netease: 2735951115
+  youtubeChannel: 网易云音乐官方频道
+  officialUpload: true
+  scene: china
+  note: 光光出道二十多年后的快嘴段落，韵脚检查视频的评价是"光光快嘴依旧爽的起飞"。
+  sources:
+    - { title: 'B站 – 【韵脚检查】NIGHTKIDZ夜之子', url: 'https://www.bilibili.com/video/BV1u2e1zEEJk/' }
+    - { title: 'B站 – 【韵脚检查】光光快嘴依旧爽的起飞！NIGHTKIDZ夜之子', url: 'https://www.bilibili.com/video/BV1tPh1zKEVi/' }
+- id: lightspeed-chopper-3
+  title: Lightspeed Chopper 3
+  artists: [dna-tru-lyricist]
+  credit: DNA Tru Lyricist
+  album: The Lightspeed Chopper Mixtape
+  youtube: _glMTGtNnPI
+  bilibili: BV19E41187kw
+  netease: 1832667523
+  youtubeChannel: DNA Tru Lyricist
+  officialUpload: true
+  scene: world
+  year: 2015
+  note: 'DNA 最快的歌，也是他招牌系列的第三首（2015 年 4 月发行）。NahDah 2023 版第 9 名：1.070 秒 19 个音节 ≈ 17.76；2017 版测的也是这首，约 17.7，两版一致。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'B站 – NahDah Vebb：Top 150 Fastest Rappers 2021（转载，每条都有算式）', url: 'https://www.bilibili.com/video/BV1Av4y1Z7d7/' }
+    - { title: 'B站 – 五里亭亭长：全球rapper语速排行榜（2021）', url: 'https://www.bilibili.com/video/BV1gZ4y1P7J3/' }
+    - { title: 'YouTube – DNA - Lightspeed Chopper 3（本人频道，2015-04-13）', url: 'https://www.youtube.com/watch?v=_glMTGtNnPI' }
+- id: tie-the-noose
+  title: Tie The Noose
+  artists: [dna-tru-lyricist, leach, yung-revival]
+  credit: DNA ft. LEACH, Yung Revival
+  album: The Evolution
+  youtube: egCYAK2VzFQ
+  bilibili: BV1NZ4y1F786
+  youtubeChannel: DNA Tru Lyricist
+  officialUpload: true
+  scene: world
+  year: 2013
+  note: 'DNA、Leach、Yung Revival 三人最早的合唱之一，收在 DNA 2013 年 2 月的专辑《The Evolution》里，同年 3 月上传 YouTube；这里放的是 2015 年修掉断音的重传版。Yung Revival 在 2:35 左右有一段带弹舌的瞬间爆发，是评论区最常点名的地方。'
+  sources:
+    - { title: 'Bandcamp – DNA Tru Lyricist：The Evolution（2013-02-01）', url: 'https://dnatrulyricist.bandcamp.com/album/the-evolution' }
+    - { title: 'YouTube – DNA - Tie the Noose ft. LEACH, YUNG REVIVAL.（2013-03-27）', url: 'https://www.youtube.com/watch?v=mDs-83PVs_A' }
+- id: i-saw-red
+  title: I Saw Red
+  artists: [yung-revival, crucified, twisted-insane, dna-tru-lyricist, leach, asa-jake, down6]
+  credit: Yung Revival, Crucified, Twisted Insane, Asa Jake, DNA, DOWN6, Leach, R-Syke, Micsteam
+  youtube: cOos94buutU
+  youtubeChannel: DNA Tru Lyricist
+  officialUpload: true
+  scene: world
+  year: 2025
+  note: 'Yung Revival 2025 年回归后牵头的 chopper 合作曲，在 DNA 的频道首发。他唱第一段，Leach 在 2:40 左右。几位老牌 chopper 这次都没刻意拼速度，评论区有人说"每个人的能量都一样，没人冲过头"。'
+  sources:
+    - { title: 'YouTube – I SAW RED（DNA 频道，2025-06-07）', url: 'https://www.youtube.com/watch?v=cOos94buutU' }
+- id: tru-cipher
+  title: Tru Cipher
+  artists: [dna-tru-lyricist, leach, down6]
+  credit: DNA Tru Lyricist feat. Leach, Nokturnal, Fluenci, Swift Homicide, DOWN6
+  youtube: 2wGRpq1w1co
+  youtubeChannel: DNA Tru Lyricist
+  officialUpload: true
+  scene: world
+  year: 2023
+  note: DNA 召集的地下 chopper cypher，Leach 和 DOWN6 都在。
+  sources:
+    - { title: 'YouTube – Tru Cipher（DNA 本人频道）', url: 'https://www.youtube.com/watch?v=2wGRpq1w1co' }
+- id: gou-pa-hei
+  title: 狗怕黑
+  artists: [lil-andy, gong-zijian]
+  credit: 深蓝儿童（小安迪、Oxy 氧气哥、YLevoled 龚子建）
+  year: 2019
+  album: 宅の死（OTAKU DEATH）
+  youtube: SnnfyUL-YCI
+  bilibili: BV12a4y1a75W
+  netease: 1396946038
+  youtubeChannel: GumBrass 666 Underground Lab TV
+  officialUpload: false
+  scene: china
+  note: '五里亭亭长排的"小安迪最快的五首歌"第 1：14 字 / 1.11 秒 ≈ 12.6 字/秒。石狐九和单独测同一句是 14 字 / 1.16 秒 ≈ 12.07。'
+  sources:
+    - { title: 'B站 – 五里亭亭长：小安迪最快的五首歌【精确排行】（2021）', url: 'https://www.bilibili.com/video/BV1nb4y1Q7XA/' }
+    - { title: 'B站 – 石狐九和：中文快嘴top10（新编）（2021）', url: 'https://www.bilibili.com/video/BV1bh411v7d7/' }
+- id: rap-soldier
+  title: Rap Soldier
+  artists: [lil-andy]
+  credit: 瘦恒 SoulHan feat. 小安迪
+  year: 2017
+  album: 季前赛
+  youtube: uKVbnXBaV7c
+  netease: 507533098
+  youtubeChannel: 嘻哈音乐分享NR
+  officialUpload: false
+  scene: china
+  note: '五里亭亭长排的"小安迪最快的五首歌"第 3：12 字 / 0.99 秒 ≈ 12.1 字/秒（窗口不满 1 秒，但超过一般要求的 0.7 秒）。目前只有五里亭亭长一家测算。'
+  confidence: pending
+  sources:
+    - { title: 'B站 – 五里亭亭长：小安迪最快的五首歌【精确排行】（2021）', url: 'https://www.bilibili.com/video/BV1nb4y1Q7XA/' }
+- id: si-ge-gou-bi
+  title: 四哥购币
+  artists: [lil-andy, gong-zijian]
+  credit: 深蓝儿童（小安迪、Oxy 氧气哥、YLevoled 龚子建）/ 百川
+  year: 2019
+  youtube: 3UPRQXX94hA
+  bilibili: BV1Rq4y1o7wE
+  netease: 1377740458
+  youtubeChannel: LIOUBE
+  officialUpload: false
+  scene: china
+  note: '五里亭亭长排的"小安迪最快的五首歌"第 4：17 字 / 1.45 秒 ≈ 11.7 字/秒。目前只有五里亭亭长一家测算。'
+  confidence: pending
+  sources:
+    - { title: 'B站 – 五里亭亭长：小安迪最快的五首歌【精确排行】（2021）', url: 'https://www.bilibili.com/video/BV1nb4y1Q7XA/' }
+- id: shi-phage
+  title: 噬 Phage
+  artists: [lil-andy, gong-zijian]
+  credit: 深蓝儿童（小安迪、Oxy 氧气哥、YLevoled 龚子建）feat. Foreign Hype & Tyrant Xenos
+  year: 2019
+  album: 宅の死（OTAKU DEATH）
+  youtube: C4I1MJzmnnA
+  netease: 1384203756
+  youtubeChannel: TYRANT XENOS
+  officialUpload: true
+  scene: china
+  note: '五里亭亭长排的"小安迪最快的五首歌"第 5：19 字 / 1.83 秒 ≈ 10.4 字/秒。YouTube 链接来自合作方 Tyrant Xenos 的频道。目前只有五里亭亭长一家测算。'
+  confidence: pending
+  sources:
+    - { title: 'B站 – 五里亭亭长：小安迪最快的五首歌【精确排行】（2021）', url: 'https://www.bilibili.com/video/BV1nb4y1Q7XA/' }
+- id: undaground-choppers-7
+  title: Undaground Choppers 7
+  artists: [interchopper, kaoz, k-fix, kvr, mizury-mize, splxt]
+  credit: DJ Lil Sprite（多人 chopper cypher，含 Interchopper）
+  year: 2017
+  youtube: gFsss9gLLOU
+  youtubeChannel: Dj Lil Sprite
+  officialUpload: true
+  scene: world
+  note: 'DJ Lil Sprite 的招牌 cypher 系列第七部（2017）。Genius 记载 Interchopper 这段约 16.00 SPS（16 / 1.000），说是 SPS 社区认可的他三段正常 verse 之一；SPS wiki 则认为他几乎所有作品都加速了。'
+  confidence: disputed
+  sources:
+    - { title: 'Genius – Interchopper 艺人页', url: 'https://genius.com/artists/Interchopper' }
+    - { title: 'Wikipedia – Chopper (rap)（提到 Undaground Choppers 系列）', url: 'https://en.wikipedia.org/wiki/Chopper_(rap)' }
+    - { title: 'SPS and Chopper Rap Wiki – Interchopper', url: 'https://sps-and-chopper-rap.fandom.com/wiki/Interchopper' }
+- id: united-choppers
+  title: United Choppers
+  artists: [j-battle, kvr, mizury-mize, splxt, kaoz]
+  credit: J Battle ft. SplytSecond, kVr, Mizury, Eclip$e, Kaoz
+  youtube: 2hqSAz4zmsI
+  youtubeChannel: J Battle Vidz
+  officialUpload: true
+  scene: world
+  year: 2015
+  note: 'J Battle 发起的 chopper cypher 系列第一集。kVr 在评论区留言"我们把这首杀穿了"，很快就有人问什么时候出第二集。'
+  sources:
+    - { title: 'YouTube – United Choppers（J Battle Vidz，2015-06-03）', url: 'https://www.youtube.com/watch?v=2hqSAz4zmsI' }
+- id: united-choppers-2
+  title: United Choppers 2
+  artists: [j-battle, kvr, mizury-mize, interchopper]
+  credit: J Battle ft. Mizury, Eclip$e, kVr, Interchopper, Mizphit, Yung Demon
+  youtube: OhSs0hAsM1k
+  youtubeChannel: J Battle Vidz
+  officialUpload: true
+  scene: world
+  year: 2016
+  note: '简介给每个人标了地区：密歇根、波兰、密苏里、奥地利、亚利桑那、格鲁吉亚第比利斯，伴奏来自加拿大多伦多。J Battle 自己混音，最后写着"UNITED WE STAND"。'
+  sources:
+    - { title: 'YouTube – United Choppers 2（J Battle Vidz，2016-11-01）', url: 'https://www.youtube.com/watch?v=OhSs0hAsM1k' }
+- id: united-choppers-3
+  title: United Choppers 3
+  artists: [j-battle, mizury-mize, leach, mgk-of-armr4, mc-rice]
+  credit: J Battle ft. ARW, Mizury, Exodu$, MGK of ARMR4, Eclip$e, Leach, MC Rice
+  youtube: SNcQq9GJKYQ
+  youtubeChannel: J Battle Vidz
+  officialUpload: true
+  scene: world
+  year: 2018
+  note: '8 段 verse，Mizury Mize 唱最后一段。评论区不少人说"Leach 拿下了这首"。'
+  sources:
+    - { title: 'YouTube – United Choppers 3（J Battle Vidz，2018-09-04）', url: 'https://www.youtube.com/watch?v=SNcQq9GJKYQ' }
+- id: united-choppers-5
+  title: United Choppers 5
+  artists: [j-battle, down6, kal-paseo]
+  credit: J Battle ft. DOWN6, New Blood, LFiers, Lil Na8, Kal Paseo, XKNOWLEDGE, Ender, Marco Park$, Coutz
+  youtube: AaFFf7IFrPY
+  youtubeChannel: J Battle Vidz
+  officialUpload: true
+  scene: world
+  year: 2026
+  note: '系列第五集，全长不到三分钟，每人一小段。评论区有人说"不是每首 chopper 歌都得十几分钟长才够硬"，还有人把五集的参与名单整理了出来：J Battle 五集全在。'
+  sources:
+    - { title: 'YouTube – UNITED CHOPPERS 5（J Battle Vidz，2026-03-21）', url: 'https://www.youtube.com/watch?v=AaFFf7IFrPY' }
+- id: syllabic-war
+  title: Syllabic War
+  artists: [interchopper, mc-rice]
+  credit: Interchopper ft. MC Rice
+  year: 2016
+  album: Syllabic War
+  youtube: GfnzhA18mbs
+  bilibili: BV1pt411V7vJ
+  netease: 1832675276
+  youtubeChannel: zvikito
+  officialUpload: false
+  scene: world
+  confidence: disputed
+  note: 'Interchopper 第一首公开作品，2016 年 6 月发，请的是法国的 MC Rice。快段 1.062 秒 20 个音节，约 18.83，Genius 记为 SPS 社区认可他的三首之一；但 SPS wiki 认为他几乎所有作品都加速过，所以标"有争议"。本人频道现在只剩第二段，这里用的是 2021 年听众存档的完整版；2019 年整张《Syllabic War》上了流媒体。B 站 2019 年由森敬文搬运，配了英文字幕。'
+  sources:
+    - { title: 'YouTube – Interchopper ft MC RICE - Syllabic war (second verse)（IC 频道，2016-06-17）', url: 'https://www.youtube.com/watch?v=Tbla3H_fxNk' }
+    - { title: 'YouTube – zvikito：Interchopper - Syllabic War (full track)（2021-04-18）', url: 'https://www.youtube.com/watch?v=GfnzhA18mbs' }
+    - { title: 'Genius – Interchopper 艺人页', url: 'https://genius.com/artists/Interchopper' }
+    - { title: 'SPS and Chopper Rap Wiki – Interchopper', url: 'https://sps-and-chopper-rap.fandom.com/wiki/Interchopper' }
+    - { title: 'B站 – 森敬文：『说唱搬运』Syllabic war（音节战争）—interchopper ft. MC Rice 英文字幕版（2019）', url: 'https://www.bilibili.com/video/BV1pt411V7vJ/' }
+    - { title: '网易云音乐 – Interchopper：Syllabic War（专辑《Syllabic War》，2019-06-27 上架）', url: 'https://music.163.com/#/song?id=1832675276' }
+- id: illest-choppers-2
+  title: Illest Choppers 2
+  artists: [kvr, killhollow, dumanoid, dna-tru-lyricist, kaoz, mgk-of-armr4, mc-rice]
+  credit: MC Rice ft. LîL hØllÖw, BoneZ, CRhyme, S7ven Da Don, LEECH, Huslah, Kaoz, MSL, DNA, kVR, Chronic Boss, MGK of ARMR4, DNS & Twissler
+  youtube: L_nDMhnXHLM
+  youtubeChannel: YungDro Productions
+  officialUpload: false
+  scene: world
+  year: 2016
+  confidence: disputed
+  note: 'MC Rice 2016 年圣诞节前发的 15 人 cypher。kVr 那段有 19.86，是他最快的一段，NahDah 2021 版第 5 名用的就是它；但他本人对那段不满意，要求 2023 版不要再用。Killhollow（当时叫 LiL hOllOw）和 DNS（Dumanoid）的段落也在里面。'
+  sources:
+    - { title: 'NahDah Vebb – 2023 榜除名说明', url: 'https://docs.google.com/document/d/1DfcPmT5YCWYwDRP-uyFMEthi9n7ctGRsK2C3QxiFJrA' }
+    - { title: 'NahDah Vebb – 2021 版榜单曲目文档', url: 'https://docs.google.com/document/d/1UpOgX1BNIrPTK4F1JwibltfDSiVjJMLcQFbbmueJvUs' }
+    - { title: 'YouTube – MC Rice Presents ILLEST CHOPPERS 2（YungDro Productions，2016-12-20）', url: 'https://www.youtube.com/watch?v=L_nDMhnXHLM' }
+- id: undaground-choppers-5
+  title: Undaground Choppers 5
+  artists: [mizury-mize, interchopper, dna-tru-lyricist, splxt, k-fix, kaoz]
+  credit: DJ Lil Sprite ft. SplytSecond, K-Fix, Kaoz, Hurricane, Interchopper, Mister Hyde, Mizury Mize, Sensei, DNA
+  youtube: fNWWcXNwIU0
+  youtubeChannel: Dj Lil Sprite
+  officialUpload: true
+  scene: world
+  year: 2016
+  note: 'DJ Lil Sprite 招牌 cypher 系列的第五集。NahDah 2017 版把这首列为 Mizury Mize 的代表作，2021 版第 4 名 Interchopper 用的也是这首。'
+  sources:
+    - { title: 'NahDah Vebb – 2021 版榜单曲目文档', url: 'https://docs.google.com/document/d/1UpOgX1BNIrPTK4F1JwibltfDSiVjJMLcQFbbmueJvUs' }
+    - { title: 'YouTube – Undaground Choppers 5（Dj Lil Sprite，2016-08-10）', url: 'https://www.youtube.com/watch?v=fNWWcXNwIU0' }
+- id: undaground-choppers-6
+  title: Undaground Choppers 6
+  artists: [mizury-mize, killhollow, dna-tru-lyricist, interchopper, splxt, k-fix, kaoz]
+  credit: DJ Lil Sprite ft. SplytSecond, Big Loony, Hurricane, D-Spillz, Kaoz, Bonez, Mizury Mize, DNA, Interchopper, Lil Hollow, Fenksta, Tonik, Sensei, VBL, K-Fix
+  youtube: lyH3ikyg6Wk
+  youtubeChannel: Dj Lil Sprite
+  officialUpload: true
+  scene: world
+  year: 2017
+  confidence: disputed
+  note: '15 人的 cypher。Mizury Mize 那段 19 ÷ 1.017 ≈ 18.68，NahDah 2021 版第 6，但圈里普遍认为加速了，2023 版把他除名；Killhollow 那段 16 ÷ 1.055 ≈ 15.17，2023 版第 35。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'NahDah Vebb – 2023 榜除名说明', url: 'https://docs.google.com/document/d/1DfcPmT5YCWYwDRP-uyFMEthi9n7ctGRsK2C3QxiFJrA' }
+    - { title: 'NahDah Vebb – 2021 版榜单曲目文档', url: 'https://docs.google.com/document/d/1UpOgX1BNIrPTK4F1JwibltfDSiVjJMLcQFbbmueJvUs' }
+    - { title: 'YouTube – Undaground Choppers 6（Dj Lil Sprite，2017-02-03）', url: 'https://www.youtube.com/watch?v=lyH3ikyg6Wk' }
+- id: speed-demons-2
+  title: Speed Demons 2
+  artists: [kvr]
+  credit: Trash Music ft. Abyss & MSL, Danjor, Big Switch, 4fifth, kVr
+  youtube: PNTjoowiFP0
+  youtubeChannel: Trash Music
+  officialUpload: true
+  scene: world
+  year: 2017
+  note: 'MSL 发起的 chopper 系列第二集。kVr 那段 17 ÷ 1.053 ≈ 16.14，NahDah 2023 版第 14 名；他自己留言说这是他"最好的一次快嘴客串"。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'YouTube – Trash Music Presents: Speed Demons 2（2017-05-30）', url: 'https://www.youtube.com/watch?v=PNTjoowiFP0' }
+- id: bag-of-souls
+  title: Bag Of Souls
+  artists: [killhollow]
+  credit: LiL hOllOw
+  youtube: ZKFk2mQDjh8
+  youtubeChannel: KillhOllOw
+  officialUpload: true
+  scene: world
+  year: 2016
+  confidence: pending
+  note: '听众公认的 Killhollow 最快的一首，NahDah 2017 版第 10 名（21 ÷ 1.06 ≈ 19.8）用的就是它。那一版后来被 NahDah 标成 outdated。'
+  sources:
+    - { title: 'B站 – Fatality丶九头龙：世界最快速說唱歌手排行榜2017（NahDah 2017 版搬运）', url: 'https://www.bilibili.com/video/BV11x411L79b/' }
+    - { title: 'YouTube – LiL hOllOw - Bag Of Souls (Mastered Version)（2016-03-13）', url: 'https://www.youtube.com/watch?v=ZKFk2mQDjh8' }
+- id: getcha-head-cracked
+  title: Getcha Head Cracked
+  artists: [j-battle]
+  credit: J Battle ft. Playboy Mack（prod. Beat Brothers）
+  youtube: XNhyaHSE71Y
+  youtubeChannel: J Battle Vidz
+  officialUpload: true
+  scene: world
+  year: 2016
+  confidence: pending
+  note: 'J Battle 那段 15 ÷ 1.020 ≈ 14.71，NahDah 2023 版第 71 名；这首没有官方歌词，音节是按听感数的。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'YouTube – J Battle-Getcha Head Cracked ft. Playboy Mack（2016-08-10）', url: 'https://www.youtube.com/watch?v=XNhyaHSE71Y' }
+- id: killin-shit
+  title: Killin' Shit
+  artists: [mizury-mize]
+  credit: Mizury（prod. DJ Lil Sprite）
+  youtube: eRzvwgkUFZ8
+  youtubeChannel: Mizury Mize
+  officialUpload: true
+  scene: world
+  year: 2016
+  note: 'DJ Lil Sprite 办的"Killin'' Shit"征选的第一名。'
+  sources:
+    - { title: 'YouTube – Mizury - Killin'' Shit [1st Place Winner Killing Shit CONTEST]（2016-10-18）', url: 'https://www.youtube.com/watch?v=eRzvwgkUFZ8' }
+- id: illest-choppers-4
+  title: Illest Choppers 4
+  artists: [mgk-of-armr4, dumanoid, sabotahe, don-xperto, the-jackal, yung-revival, kardiyak, mcbustaflo, mc-rice, nihilist]
+  credit: MC Rice ft. Don Xperto, DNS（Dumanoid）, Fenksta, IAMCHRISCRAIG, The Jackal, Kardiyak, MCBustaflow, MGK of ARMR4, Nihilist, Sabotahe, SM The Ripper, Trust Tha Touch, VBL, Yung Revival
+  youtube: RLQEutWjQxI
+  bilibili: BV1MW41167Bk
+  youtubeChannel: YungDro Productions
+  officialUpload: false
+  scene: world
+  year: 2018
+  note: '法国 MC Rice 的 Illest Choppers 系列第四集，来自美国、墨西哥、菲律宾、匈牙利、澳大利亚、英国等地的 chopper 同台。NahDah 2023 版第 28 名 Kardiyak 用的就是这首。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'YouTube – MC Rice Presents ILLEST CHOPPERS 4（2018-08-13）', url: 'https://www.youtube.com/watch?v=RLQEutWjQxI' }
+- id: planetary-choppers
+  title: Planetary Choppers
+  artists: [interchopper, j-battle, mc-rice, nihilist]
+  credit: Smokin Beatz Records ft. Nihilist, SM, MC Rice, J Battle, Criminal-R.O, Kw!n, Ice Dee, Interchopper
+  youtube: 1-txdwgGtqA
+  bilibili: BV1hx411V7Aa
+  youtubeChannel: Smokin Beatz Records
+  officialUpload: true
+  scene: world
+  year: 2017
+  note: '法国厂牌 Smokin Beatz Records 的国际 chopper 合作，简介写 Prod. D3B（dvagoh 2023 年留言称这是 YouTube 上的现成 beat、不是 D3B 做的，只有他一个人这么说），MC Rice 混音，2017 年 9 月 16 日发布。按简介的顺序：Nihilist（美国）、SM（俄罗斯）、MC Rice（法国）、J Battle（美国）、Criminal-R.O（巴西）、Kw!n（加拿大）、Ice Dee（巴西），最后是格鲁吉亚的 Interchopper 压轴。The Jackal 在评论区逐个点评，说 Nihilist"一如既往地快，一直在进步"。同年 11 月貪婪國的子民把它搬到了 B 站。'
+  sources:
+    - { title: 'YouTube – Smokin Beatz Records - Planetary Choppers (Prod. D3B)（2017-09-16，简介列了演唱顺序和国家）', url: 'https://www.youtube.com/watch?v=1-txdwgGtqA' }
+    - { title: 'B站 – 貪婪國的子民：Planetary Choppers（2017-11-21）', url: 'https://www.bilibili.com/video/BV1hx411V7Aa/' }
+- id: kill-4
+  title: Kill 4（Paslangin 4）
+  artists: [sabotahe, mgk-of-armr4, mc-rice]
+  credit: Aktibar x Sabotahe ft. Global Choppers（Reszback, CRhyme, Liquiid Vortex, MC Rice, MGK of ARMR4 等）
+  youtube: Q9Z1qXV47Zs
+  youtubeChannel: Aktibar Official
+  officialUpload: true
+  scene: world
+  year: 2018
+  note: 'Aktibar 的 Kill 系列第四部，十几位 rapper 接力，MGK of ARMR4 压轴。他那段测到 16.19，NahDah 2021 版第 9 名用的就是它；但 2023 版因为音质、也因为他本人不想再用这段，改用了《United Choppers 3》。'
+  sources:
+    - { title: 'NahDah Vebb – 2023 榜除名说明（MGK of ARMR4 一节）', url: 'https://docs.google.com/document/d/1DfcPmT5YCWYwDRP-uyFMEthi9n7ctGRsK2C3QxiFJrA' }
+    - { title: 'YouTube – Kill 4 - Aktibar x Sabotahe Ft Global Choppers（2018-11-06）', url: 'https://www.youtube.com/watch?v=Q9Z1qXV47Zs' }
+- id: onion-chopper-rmx
+  title: Onion Chopper RMX
+  artists: [ruffian-rugged, dumanoid, down6, kal-paseo, the-jackal, heureca, asa-jake, splxt]
+  credit: Ruffian Rugged & Dumanoid ft. Esrap, Swisher Sleep, DOWN6, Afu-Ra, Kinetical, Lucidd, Dvagoh, The Jackal, Jedal Strange, Kal Paseo, heureCa, Asa, Conrado Molina, SPLXT
+  youtube: QUdTwwol-x8
+  youtubeChannel: Def Ill aka Ruffian Rugged
+  officialUpload: true
+  scene: world
+  year: 2024
+  confidence: pending
+  note: '《Onion Chopper》的全明星 Remix，简介给每个人都标了国籍。芬兰的 HeureCa 那段 17 ÷ 1.067 ≈ 15.93，NahDah 2023 版第 19 名，测的时候这首还没发。B 站 UP 主"喜欢chop的艾拉"发布第二天就做了一期。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'YouTube – Ruffian & Dumanoid - Onion Chopper RMX（2024-12-29）', url: 'https://www.youtube.com/watch?v=QUdTwwol-x8' }
+    - { title: 'B站 – 喜欢chop的艾拉：【最新！！】Onion Chopper RMX（2024-12-25）', url: 'https://www.bilibili.com/video/BV1KnCcYhEqc/' }
+- id: vida-futil-1
+  title: Vida Fútil Pt. 1
+  artists: [troll]
+  credit: Troll（prod. Rocket Beats）
+  youtube: HavqE6D2IQk
+  youtubeChannel: Troll
+  officialUpload: true
+  scene: world
+  year: 2022
+  note: '巴西 speedflow。Troll 自己写、自己混音、自己做封面，标题写着"Fastest Rapper 2022"。1.058 秒 17 个音节 ≈ 16.07，NahDah 2023 版第 16 名。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'YouTube – Troll - Vida Fútil Pt. 1（2022-11-10）', url: 'https://www.youtube.com/watch?v=HavqE6D2IQk' }
+- id: donkey-kong
+  title: Donkey Kong
+  artists: [the-jackal, troll]
+  credit: The Jackal ft. Troll
+  youtube: m7LiwxLWnkc
+  youtubeChannel: The Jackal Rapper
+  officialUpload: true
+  scene: world
+  year: 2024
+  confidence: pending
+  note: '澳大利亚的 The Jackal 和巴西的 Troll 合作。Troll 在自己的测速频道把这首列为他最快的一段，18.13。'
+  sources:
+    - { title: 'YouTube – TrollatorBR："TOP 10" Versos Mais Rápidos do Troll（2026）', url: 'https://www.youtube.com/watch?v=Hi3JIVO2mlA' }
+- id: sos-monster
+  title: Monster
+  artists: [sos]
+  credit: SOS
+  youtube: UgEl8XcPrUU
+  youtubeChannel: SOS
+  officialUpload: true
+  scene: world
+  year: 2022
+  confidence: pending
+  note: '日本早口 rapper SOS 的原创曲。2:10 前后一段 1.008 秒 16 个音节 ≈ 15.87，NahDah 2023 版第 20 名；日语音节是按听感数的。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+- id: conqueror-haki
+  title: Conqueror Haki
+  artists: [crisone]
+  credit: Bradthugs, Nosram, Jumper, CrisOne
+  youtube: LJtOjMsJdDk
+  youtubeChannel: CrisOne Decano
+  officialUpload: true
+  scene: world
+  year: 2022
+  note: '菲律宾他加禄语四人合作曲，标题取自《海贼王》的"霸王色霸气"。CrisOne 唱最后一段，1.056 秒 18 个音节 ≈ 17.04，NahDah 2023 版第 13 名。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+- id: undaground-choppers-3
+  title: Undaground Choppers 3
+  artists: [splxt, k-fix, dna-tru-lyricist, crucified, mizury-mize, j-battle]
+  credit: DJ Lil Sprite ft. DNA, Hurricane, Kamikazi, K-Fix, SplytSecond, J-Battle, Mental Cases, Mizury, Kohn, JL of B.Hood, Crucified
+  youtube: gWqv1rZqIYk
+  youtubeChannel: Dj Lil Sprite
+  officialUpload: true
+  scene: world
+  year: 2015
+  note: 'DJ Lil Sprite 招牌系列第三集，DNA 混音。SplytSecond（现名 SPLXT）那段 16 ÷ 1.043 ≈ 15.34，NahDah 2021、2023 两版都用；DNA 在评论区说 K-Fix 和 SplytSecond 的快段"很难分高下"。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'YouTube – Undaground Choppers 3（Dj Lil Sprite，2015-07-31）', url: 'https://www.youtube.com/watch?v=gWqv1rZqIYk' }
+- id: our-time
+  title: Our Time
+  artists: [k-fix, kaoz]
+  credit: Kaotic Klique ft. K-Fix
+  album: The Overdose
+  youtube: Aevpmu9kmAs
+  youtubeChannel: Kaotic Klique
+  officialUpload: true
+  scene: world
+  year: 2014
+  confidence: pending
+  note: '奥斯汀组合 Kaotic Klique 的专辑曲。K-Fix 那段 16 ÷ 1.026 ≈ 15.60（NahDah 2023 版第 22），2021 版测同一段是 15.44；音节按听感数。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'YouTube – Our Time - Kaotic Klique featuring K-Fix（2014-09-14）', url: 'https://www.youtube.com/watch?v=Aevpmu9kmAs' }
+- id: hiroshima-speed-war-2
+  title: Hiroshima (Speed War II)
+  artists: [lyrah, sabotahe]
+  credit: DEE M, RANZ, BRADTHUGZ, Palazzo, cnine, Slymer, Jumong, Serial, Bastee, Lyrah Lyrah, Homeryoh, Dados M, Blessed Tongue, Nicolas, Siobal D, GK Ibarra, Sabotahe（prod. Pendo46）
+  youtube: SY2vAZKUPGY
+  youtubeChannel: HMGSKN official
+  officialUpload: true
+  scene: world
+  year: 2021
+  confidence: pending
+  note: '菲律宾 speed rap 圈 17 人接力，Sabotahe 压轴。Lyrah 唱第 10 段，16 ÷ 1.032 ≈ 15.50，NahDah 2023 版第 23 名；他加禄语音节按听感数。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'YouTube – "HIROSHIMA" (SPEED WAR II)（2021-02-26）', url: 'https://www.youtube.com/watch?v=SY2vAZKUPGY' }
+- id: gazra
+  title: Gazra（قازره）
+  artists: [vortex]
+  credit: Vortex（prod. LBandy）
+  youtube: 2zr0TssfHAE
+  youtubeChannel: Vortex Official
+  officialUpload: true
+  scene: world
+  year: 2021
+  confidence: pending
+  note: '科威特 rapper Vortex 的阿拉伯语 diss 曲。其中一段 16 ÷ 1.046 ≈ 15.30，NahDah 2023 版第 27 名，2024 年"每国最快"里也是科威特的代表；音节按听感数。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'YouTube – VORTEX - GAZRA（2021-01-31）', url: 'https://www.youtube.com/watch?v=2zr0TssfHAE' }
+- id: showdown-fastest-rapper
+  title: Showdown：Fastest Rapper
+  artists: [alep-hunter]
+  credit: RojakDaily「Showdown」（Alep Hunter 等）
+  youtube: CKSaNMTXca4
+  youtubeChannel: Danial Aressa
+  officialUpload: false
+  scene: world
+  year: 2019
+  note: '马来西亚媒体 RojakDaily 的一期"最快 rapper"对决，Alep Hunter 最后上场。他这段 16 ÷ 1.038 ≈ 15.41，按官方歌词数音节，NahDah 2021 版第 39、2023 版第 25。'
+  sources:
+    - { title: 'NahDah Vebb – Top 150 Fastest Rappers（2023）逐条测算文档', url: 'https://docs.google.com/document/d/1inMqOs_9LQzq-AiatVcLJPOOYKkwP2cm0u8O0-RPTHA' }
+    - { title: 'YouTube – SHOWDOWN _ FASTEST RAPPER, AlepHunter raps（2019-09-19）', url: 'https://www.youtube.com/watch?v=CKSaNMTXca4' }
+- id: chinese-choppers
+  title: Chinese Choppers
+  artists: [xia-chunyang, cyanvine]
+  credit: 夏淳扬 发起，ft. 青藤 CyanVine、JMS、WILLBE、YKY、zenk、陆字 Lil-3ard、小旭 8ight 2wo 9ine、金鼠儿、芒斯特、ChaChe、赛文凯、CHD、Lil king、Tricky阎 等
+  scene: china
+  year: 2026
+  netease: 3380166290
+  officialUpload: true
+  note: '中国新一批 chopper 的大合唱，夏淳扬发起、策划并做音频编辑，夏淳扬和费岩迪混音，全长约 16 分钟，2026 年 5 月 9 日上线网易云（另有 part 1、part 2 分段版）。发布后 B 站、YouTube 上很快出现了逐段翻唱；小安迪在直播里完整听了一遍，说这是真正的 chop。'
+  sources:
+    - { title: '网易云音乐 – Chinese Choppers（专辑简介列出发起人、演唱和混音）', url: 'https://music.163.com/#/song?id=3380166290' }
+    - { title: 'B站 – 夏淳扬：Chinese choppers cypher coming soon！5.10（2026-04-30 预告）', url: 'https://www.bilibili.com/video/BV1mw9YBzE5o/' }
+    - { title: 'B站 – 夏淳扬上传：小安迪直播 re《Chinese Choppers》（2026-06-16）', url: 'https://www.bilibili.com/video/BV1S2j36tERu/' }
+    - { title: 'YouTube – 喜欢chop的艾拉：Chinese Choppers Cypher 赛文凯、ChaChe verse 翻唱', url: 'https://www.youtube.com/watch?v=YgBjK6V_nzI' }
+- id: superluminal-choppers-kastelaro
+  title: Superluminal Choppers (Kastelaro Part)
+  artists: [kastelaro]
+  credit: Kastelaro
+  scene: china
+  year: 2021
+  netease: 1836364021
+  officialUpload: true
+  note: 'SLC（Superluminal Choppers）同名 cypher 里 Kastelaro 的段落。cypher 一直没录成，他在 2021 年 4 月 4 日把自己这段单独发了出来。石狐九和的《中文快嘴 top10（新编）》把其中一段排在第 1：2.04 秒 31 个字，约 15.20。'
+  sources:
+    - { title: '网易云音乐 – Superluminal Choppers (Kastelaro Part)（2021-04-04）', url: 'https://music.163.com/song?id=1836364021' }
+    - { title: 'B站 – 石狐九和：中文快嘴top10（新编）（2021-05-19）', url: 'https://www.bilibili.com/video/BV1bh411v7d7/' }
+- id: bilibili-choppers
+  title: Bilibili Choppers
+  artists: [cyanvine, mushmach]
+  credit: 小青藤呐（CyanVine）、GumBrass、Stlicmc、Lil蓝莓、AKA Triple-W、Y Herry、iSwear、Nero·Wander、蘑菇（MUSHMACH）；策划 五里亭亭长、GumBrass
+  scene: china
+  year: 2024
+  bilibili: BV1ym421V7oo
+  youtube: zEv3_o16Nuo
+  youtubeChannel: GumBrass 666 Underground Lab TV
+  officialUpload: true
+  note: 'B 站九位 chopper 的 cypher，2024 年 6 月 23 日发布，约 7 分钟。五里亭亭长负责工程，和 iSwear 一起剪辑，HMBb__ 混音，伴奏来自 DropoutBeats。'
+  sources:
+    - { title: 'B站 – 五里亭亭长：Bilibili Choppers（2024-06-23）', url: 'https://www.bilibili.com/video/BV1ym421V7oo/' }
+    - { title: 'YouTube – GumBrass - Bilibili Choppers（简介列出全部参与者和分工）', url: 'https://www.youtube.com/watch?v=zEv3_o16Nuo' }
+- id: si-hai
+  title: 死骸
+  artists: [xia-chunyang, cyanvine]
+  credit: 夏淳扬、青藤 CyanVine
+  scene: china
+  year: 2025
+  netease: 2752225152
+  officialUpload: true
+  note: '青藤的第一首单曲，2025 年 10 月 2 日上线网易云。青藤把自己那段剪成《中国最快的一段说唱？》发在 B 站，播放过万，置顶评论里解释了"没有使用任何弹舌""这是 chop"。'
+  sources:
+    - { title: '网易云音乐 – 死骸（2025-10-02）', url: 'https://music.163.com/song?id=2752225152' }
+    - { title: 'B站 – 青藤cyanvine：中国最快的一段说唱？（2025-10-04）', url: 'https://www.bilibili.com/video/BV16FxszSE7s/' }
+- id: bilibili-choppers-2
+  title: Bilibili Choppers 2
+  artists: [xia-chunyang, cyanvine, zack]
+  credit: 夏淳扬、Zack-Official、青藤 CyanVine、jms、notboy、74l'votmzreg、ZeroNight 无夜、frk05
+  scene: china
+  year: 2026
+  netease: 3440568361
+  officialUpload: true
+  note: '2024 年《Bilibili Choppers》的续作，2026 年 9 月 23 日上线网易云，约 4 分 44 秒，简介说"有很多国际友人参加"。'
+  sources:
+    - { title: '网易云音乐 – Bilibili Choppers 2（2026-09-23）', url: 'https://music.163.com/song?id=3440568361' }
+- id: undaspeed-solo-1
+  title: Undaspeed Solo1
+  artists: [mushmach]
+  credit: MUSHMACH（Prod. Freeti Beats）
+  scene: china
+  year: 2023
+  youtube: 6OmIbrnQkEE
+  youtubeChannel: GumBrass 666 Underground Lab TV
+  bilibili: BV1CpSBYLEUZ
+  officialUpload: true
+  note: 'MUSHMACH 的 Undaspeed 系列第一首，2023 年 8 月 2 日发布。GumBrass 的频道在简介里介绍他是来自吉林的 boombap rapper，正在努力成为新一代中国 chopper。'
+  sources:
+    - { title: 'YouTube – MUSHMACH - Undaspeed Solo1（2023-08-02）', url: 'https://www.youtube.com/watch?v=6OmIbrnQkEE' }
+    - { title: 'B站 – GumBrass恐核速说频道：MUSHMACH - Undaspeed Solo1', url: 'https://www.bilibili.com/video/BV1CpSBYLEUZ/' }
+- id: xie-di-rap-god-remix
+  title: Rap God (Remix)
+  artists: [xie-di]
+  credit: 谢帝
+  scene: china
+  year: 2019
+  bilibili: BV1Ez4y117xf
+  officialUpload: true
+  note: '谢帝改编 Eminem《Rap God》的版本，是他最出名的快嘴作品。官方发行时间不详，B 站最早的搬运在 2019 年 10 月；说唱会馆 2021 年 3 月在 B 站上传，播放将近 90 万。'
+  sources:
+    - { title: 'B站 – CDC说唱会馆：谢帝 - Rap God (Remix)（2021-03-11）', url: 'https://www.bilibili.com/video/BV1Ez4y117xf/' }
+    - { title: 'B站 – 天气温云：【姆爷×谢帝】rap god（左右声道）（2019-10-20）', url: 'https://www.bilibili.com/video/BV1QE41167zs/' }
+- id: aang
+  title: Aang
+  artists: [eze]
+  credit: eze（prod. Soulis，混音 Troll）
+  scene: world
+  year: 2023
+  youtube: _QiU-jxqG7s
+  youtubeChannel: ezeq
+  officialUpload: true
+  note: 'NahDah 2024 年"每国最快"的巴西一栏：1.04 秒 21 个音节 ≈ 20.19，全表第 3。'
+  sources:
+    - { title: 'YouTube – eze - Aang (prod. Soulis)（2023-11-02）', url: 'https://www.youtube.com/watch?v=_QiU-jxqG7s' }
+    - { title: 'NahDah Vebb – The Fastest Rapper from Every Country（2024）曲目表', url: 'https://docs.google.com/spreadsheets/d/1q6ccbONUj_yDxAbRCYVqQK5DLmxcQ4I6wlK_zVeaz0o' }
+- id: unknown-cypher-5
+  title: Unknown Cypher 5
+  artists: [faraway, down6, troll, mc-rice]
+  credit: mana（Unknown）制作，ft. DOWN6、Kenos、Hasimoco、MC Rice、SKELETONE、druid、Muskrat、Troll、Branx、Teri、Faraway 等
+  scene: world
+  year: 2024
+  youtube: sCQGIpR91oU
+  youtubeChannel: Faraway
+  officialUpload: true
+  note: 'Faraway 负责混音和歌词视频。他那段 1 秒整 15 个音节，是 NahDah 2024 年"每国最快"的俄罗斯一栏。'
+  sources:
+    - { title: 'YouTube – mana — Unknown Cypher 5 (Lyric video)（2024-09-28，简介列出全部参与者）', url: 'https://www.youtube.com/watch?v=sCQGIpR91oU' }
+- id: bad-juju-remix
+  title: BAD JUJU (Tech N9ne Remix)
+  artists: [asa-jake]
+  credit: Asa
+  scene: world
+  year: 2024
+  youtube: jcw-k32BckQ
+  youtubeChannel: Asa
+  officialUpload: true
+  note: '改编 Tech N9ne 的《BAD JUJU》。0:34 那段 1 秒整 16 个音节，NahDah 2024 年"每国最快"的英国一栏。'
+  sources:
+    - { title: 'YouTube – Asa：BAD JUJU (TECH N9NE REMIX)（2024-08-02）', url: 'https://www.youtube.com/watch?v=jcw-k32BckQ' }
+- id: shadows
+  title: SHADOWS
+  artists: [down6, wedere]
+  credit: DOWN6 × Throwaway ft. Wedere
+  scene: world
+  year: 2023
+  youtube: n2Zj-3kt53Q
+  youtubeChannel: Wedere
+  officialUpload: true
+  note: 'Wedere 上传的是自己客串的那段。1 秒整 17 个音节，NahDah 2024 年"每国最快"的意大利一栏。'
+  sources:
+    - { title: 'YouTube – WEDERE - SHADOWS - RAP PIÙ VELOCE D''ITALIA（2024-07-23）', url: 'https://www.youtube.com/watch?v=n2Zj-3kt53Q' }
+

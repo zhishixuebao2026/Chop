@@ -5,7 +5,7 @@ country: BR
 city: 未公开
 region: 拉丁美洲
 style: chopper
-styleNote: 牵头做过《Intercontinental Choppers》（伴奏、混音、剪辑都是他自己），也上过 Discord 那批 chopper 合作；五里亭亭长 2022 年的榜里也直接称他 chopper，所以标为 chopper。巴西圈把这种风格叫"speed flow"，测速博主列出的他最快的十段 verse 全在每秒 14 个音节以上；作品里也有不少偏舞情、阴暗的慢歌。
+styleNote: 牵头做过《Intercontinental Choppers》（伴奏、混音、剪辑都是他自己），也上过 Discord 那批 chopper 合作；五里亭亭长 2022 年的榜里也直接称他 chopper，所以标为 chopper。巴西圈把这种风格叫"speed flow"，测速博主列出的他最快的十段 verse 全在每秒 14 个音节以上；作品里也有不少偏抒情、阴暗的慢歌。
 tags: [巴西, 葡萄牙语, speed flow, 巴西最快]
 youtube: { channelId: UCcmSHsSXOSVI3FMQlidPkmA, handle: '@Shad_999', kind: official }
 useBanner: false
