@@ -2,11 +2,11 @@ name: 部署到 GitHub Pages
 
 on:
   push:
-    branches: [main, 'arena/**']
+    branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -35,7 +35,6 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    continue-on-error: true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -43,14 +42,16 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
-  # 构建在线分支预览版本（支持 raw.githack.com 直接打开预览），推送到 site 分支
+  # 另外构建一份「域名根目录」版本（index.html 在最外层），放到 site 分支，
+  # 给要传到其他托管（FTP / 网页上传）的人：在 GitHub 上打开 site 分支 → Code → Download ZIP。
+  # 不影响上面的 GitHub Pages 部署。换域名：仓库 Settings → Variables 里加 SITE_URL。
   package-root:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     env:
-      BASE_PATH: /${{ github.repository }}/site
-      SITE_URL: https://raw.githack.com
+      BASE_PATH: /
+      SITE_URL: ${{ vars.SITE_URL || 'https://chop.wuaze.com' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -59,7 +60,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - run: node scripts/githack-links.mjs
       # Windows 本地预览脚本，只放进 site 分支，不进 GitHub Pages
       - run: cp scripts/local-preview/* dist/
       - name: 推送到 site 分支
@@ -69,5 +69,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -q -m "构建自 ${GITHUB_SHA::7}（在线分支预览版本）"
+          git commit -q -m "构建自 ${GITHUB_SHA::7}（域名根目录版本）"
           git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" site

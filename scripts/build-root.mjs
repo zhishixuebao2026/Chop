@@ -4,7 +4,7 @@
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 
-const site = process.argv[2] ?? process.env.SITE_URL ?? 'https://zhishixuebao2026.github.io';
+const site = process.argv[2] ?? process.env.SITE_URL ?? 'https://xoqnapgf-dot.github.io';
 const env = { ...process.env, BASE_PATH: '/', SITE_URL: site };
 
 const r = spawnSync('npm', ['run', 'build'], { stdio: 'inherit', env, shell: true });

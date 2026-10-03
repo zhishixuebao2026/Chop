@@ -10,8 +10,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
-const SITE = 'https://zhishixuebao2026.github.io';
-const BASE = '/Chop';
+const SITE = 'https://xoqnapgf-dot.github.io';
+const BASE = '/chop';
 const out = path.resolve('dist/_astro');
 
 async function get(url) {
